@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6A64CB3-F6A5-4D9D-BAAC-7E0451A33BF7}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagicGameTracker</RootNamespace>
+    <AssemblyName>MagicDeckManagerMVVM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>MagicGameTracker.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>MagicGameTracker.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="system.data.linq" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ColorsUsedGraph.xaml.cs">
+      <DependentUpon>ColorsUsedGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\EmailDeveloper.xaml.cs">
+      <DependentUpon>EmailDeveloper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\PickFormatComponent.xaml.cs">
+      <DependentUpon>PickFormatComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\PickOpponentComponent.xaml.cs">
+      <DependentUpon>PickOpponentComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WinrateHistoryGraph.xaml.cs">
+      <DependentUpon>WinrateHistoryGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ActiveStatusToTextConverter.cs" />
+    <Compile Include="Converters\DeckToRatingBrushConverter.cs" />
+    <Compile Include="Converters\DoubleToPerformanceRatingBrushConverter.cs" />
+    <Compile Include="Converters\DeckToPerformanceratingBrushConverter.cs" />
+    <Compile Include="Converters\IntToLifeBrushConverter.cs" />
+    <Compile Include="Converters\WinToBrushConverter.cs" />
+    <Compile Include="Converters\WinToTextConverter.cs" />
+    <Compile Include="Logic\MagicEnums.cs" />
+    <Compile Include="Logic\RatingColorValues.cs" />
+    <Compile Include="Logic\StatisticReports.cs" />
+    <Compile Include="Logic\StatisticsCalculator.cs" />
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LifeCounterModel.cs" />
+    <Compile Include="Model\MagicDataContext.cs" />
+    <Compile Include="Sections\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\AddAlterationPage.xaml.cs">
+      <DependentUpon>AddAlterationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\AddGame.xaml.cs">
+      <DependentUpon>AddGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\AddOpponentPage.xaml.cs">
+      <DependentUpon>AddOpponentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\AlterationPage.xaml.cs">
+      <DependentUpon>AlterationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\DeckList.xaml.cs">
+      <DependentUpon>DeckList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\DeckPage.xaml.cs">
+      <DependentUpon>DeckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\NewDeck.xaml.cs">
+      <DependentUpon>NewDeck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sections\OpponentPage.xaml.cs">
+      <DependentUpon>OpponentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\OpponentList.xaml.cs">
+      <DependentUpon>OpponentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\PlayerPage.xaml.cs">
+      <DependentUpon>PlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StateUtilities.cs" />
+    <Compile Include="ViewModel\LifeCounterViewModel.cs" />
+    <Compile Include="ViewModel\MagicViewModel.cs" />
+    <Compile Include="View\About\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\AddAlterationInstructions.xaml.cs">
+      <DependentUpon>AddAlterationInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\AddGameInstructions.xaml.cs">
+      <DependentUpon>AddGameInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\DeckListInstructions.xaml.cs">
+      <DependentUpon>DeckListInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\DeckPageInstructions1.xaml.cs">
+      <DependentUpon>DeckPageInstructions1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\DeckPageInstructions2.xaml.cs">
+      <DependentUpon>DeckPageInstructions2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\GameDetailsinstructions.xaml.cs">
+      <DependentUpon>GameDetailsinstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\NewDeckInstructions.xaml.cs">
+      <DependentUpon>NewDeckInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\OpponentDetailsInstructions.xaml.cs">
+      <DependentUpon>OpponentDetailsInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\OpponentsInstructions.xaml.cs">
+      <DependentUpon>OpponentsInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\About\PlayerStatisticsInstructions1.xaml.cs">
+      <DependentUpon>PlayerStatisticsInstructions1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddDeckAlterationView.xaml.cs">
+      <DependentUpon>AddDeckAlterationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddGameView.xaml.cs">
+      <DependentUpon>AddGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddOpponent.xaml.cs">
+      <DependentUpon>AddOpponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlterationDetails.xaml.cs">
+      <DependentUpon>AlterationDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlterationList.xaml.cs">
+      <DependentUpon>AlterationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeckDetails.xaml.cs">
+      <DependentUpon>DeckDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeckListView.xaml.cs">
+      <DependentUpon>DeckListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeckStatisticsView.xaml.cs">
+      <DependentUpon>DeckStatisticsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GameDetails.xaml.cs">
+      <DependentUpon>GameDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GamesListView.xaml.cs">
+      <DependentUpon>GamesListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LifeCounterView.xaml.cs">
+      <DependentUpon>LifeCounterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewDeckView.xaml.cs">
+      <DependentUpon>NewDeckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpponentDetails.xaml.cs">
+      <DependentUpon>OpponentDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpponentList.xaml.cs">
+      <DependentUpon>OpponentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerCommonColors.xaml.cs">
+      <DependentUpon>PlayerCommonColors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerWinrate.xaml.cs">
+      <DependentUpon>PlayerWinrate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrackLifeView.xaml.cs">
+      <DependentUpon>TrackLifeView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Components\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ColorsUsedGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\EmailDeveloper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\PickFormatComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\PickOpponentComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\WinrateHistoryGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\AddAlterationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\AddGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\AddOpponentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\AlterationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\DeckList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\DeckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\NewDeck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\OpponentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\OpponentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sections\PlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\AddAlterationInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\AddGameInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\DeckListInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\DeckPageInstructions1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\DeckPageInstructions2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\GameDetailsinstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\NewDeckInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\OpponentDetailsInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\OpponentsInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\About\PlayerStatisticsInstructions1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddDeckAlterationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddOpponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AlterationDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AlterationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeckDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeckListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeckStatisticsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GameDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GamesListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LifeCounterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewDeckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpponentDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpponentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayerCommonColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayerWinrate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrackLifeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\black_mana_big_bw.png" />
+    <Resource Include="Images\blue_mana_big_bw.png" />
+    <Resource Include="Images\green_mana_big_bw.png" />
+    <Resource Include="Images\red_mana_big_bw.png" />
+    <Resource Include="Images\white_mana_big_bw.png" />
+    <Resource Include="ApplicationIcon.png" />
+    <Resource Include="Background.png" />
+    <Content Include="Images\appbar.delete.rest.png" />
+    <Content Include="Images\appbar.questionmark.rest.png" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="Images\appbar.cancel.rest.png" />
+    <Content Include="Images\appbar.add.rest.png" />
+    <Content Include="Images\appbar.check.rest.png" />
+    <Content Include="Images\appbar.edit.rest.png" />
+    <Content Include="Images\appbar.save.rest.png" />
+    <Content Include="Images\black_mana_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\blue_mana_big.png" />
+    <Content Include="Images\green_mana_big.png" />
+    <Content Include="Images\red_mana_big.png" />
+    <Content Include="Images\white_mana_big.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

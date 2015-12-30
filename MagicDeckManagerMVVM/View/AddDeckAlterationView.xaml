@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MagicGameTracker.View.AddDeckAlterationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="lblComment" Grid.Row="0" Height="25" HorizontalAlignment="Left" Margin="12,-5,0,0" Text="Comment" VerticalAlignment="Top" Width="Auto" FontWeight="Bold"/>
+        <TextBox Name="tbComment" Grid.Row="1" Height="113" HorizontalAlignment="Center" Text="Comment" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Grid.RowSpan="2" GotFocus="tbComment_GotFocus" LostFocus="tbComment_LostFocus" />
+    </Grid>
+</UserControl>

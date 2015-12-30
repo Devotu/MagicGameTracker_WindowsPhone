@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.DeckPageInstructions2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="600" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Deck Page (2)" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText1" Grid.Row="1" Text="There are four actions available down in the appbar; Add Game, Register Change, Toggle Active and Delete Deck." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText2" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="3" Text="Add Game opens up the page where you can register new games belonging to the deck." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="4" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="5" Text="Register Alteration opens up the page where you can register an Alteration of the deck." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="6" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="7" Text="Toggle Active simply decides whether the deck shall be visible in the list of active decks. The current status can be seen in the Details view." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText8" Grid.Row="8" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText9" Grid.Row="9" Text="Delete Deck do exactly what it says, it deleted the deck. There is however a follow-up dialog if you happened to press it by mistake. Worth noting here is that if the deck contains any played games they will move to the Default Deck." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>

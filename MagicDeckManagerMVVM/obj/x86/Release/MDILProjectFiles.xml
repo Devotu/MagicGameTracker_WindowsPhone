@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>MagicDeckManagerMVVM.dll</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>Images\appbar.delete.rest.png</File>
+    <File>Images\appbar.questionmark.rest.png</File>
+    <File>SplashScreenImage.jpg</File>
+    <File>Images\appbar.cancel.rest.png</File>
+    <File>Images\appbar.add.rest.png</File>
+    <File>Images\appbar.check.rest.png</File>
+    <File>Images\appbar.edit.rest.png</File>
+    <File>Images\appbar.save.rest.png</File>
+    <File>Images\black_mana_big.png</File>
+    <File>Images\blue_mana_big.png</File>
+    <File>Images\green_mana_big.png</File>
+    <File>Images\red_mana_big.png</File>
+    <File>Images\white_mana_big.png</File>
+    <File>AppManifest.xaml</File>
+    <File>Microsoft.Advertising.Mobile.dll</File>
+    <File>Microsoft.Advertising.Mobile.UI.dll</File>
+    <File>Microsoft.Phone.Controls.dll</File>
+    <File>Sqlite.winmd</File>
+    <File>Microsoft.Phone.Controls.Maps.dll</File>
+    <File>Microsoft.Advertising.Mobile.xml</File>
+    <File>Microsoft.Advertising.Mobile.UI.xml</File>
+    <File>Sqlite.dll</File>
+    <File>sqlite3.dll</File>
+    <File>WMAppManifest.xml</File>
+    <File>Background.png</File>
+    <File>ApplicationIcon.png</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>

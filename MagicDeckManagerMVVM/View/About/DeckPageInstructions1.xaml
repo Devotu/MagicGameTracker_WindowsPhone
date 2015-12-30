@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.DeckPageInstructions1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="600" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Deck Page (1)" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText1" Grid.Row="1" Text="Deck Page is a collection of views containing information about the selected deck; Details, Statistics, Played Games and Alterations." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText2" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="3" Text="Details contains values about Color, Format, Theme and whether the deck is Active." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="4" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="5" Text="Statistics contains basic Winrate statistics and the  average Performance Rating of the deck." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="6" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="7" Text="Played Games is a list containing all games played with the deck sorted by date (most recent on top). To view further details about the game just press one." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText8" Grid.Row="8" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText9" Grid.Row="9" Text="Alterations is a list rather similar to Played Games accept it only contains a single comment given when the alteration is recorded. To delete select an item and press for about 2 seconds." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>

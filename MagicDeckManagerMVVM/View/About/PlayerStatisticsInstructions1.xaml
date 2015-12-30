@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.PlayerStatisticsInstructions1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Total/Active/Todays Statistics" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="1" Text="The statistics are divided into all games ever played, games played with active decks and games played today." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="3" Text="Winrate shows the number of wins, losses and the corresponding win percentage." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="4" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="5" Text="Most common colors show:" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText8" Grid.Row="6" Text="(Win) the color you most often win against" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText9" Grid.Row="7" Text="(Loss) the color you most often lose against" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText10" Grid.Row="8" Text="(Play) the color you most often play with and" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText11" Grid.Row="9" Text="(Opposition) the color you most often meet." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText12" Grid.Row="10" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText13" Grid.Row="11" Text="Colors played shows the number of times each color has been in play." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>

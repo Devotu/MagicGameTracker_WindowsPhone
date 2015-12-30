@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.OpponentDetailsInstructions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Add Opponent" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText1" Grid.Row="1" Text="Type the name and press the floppy icon down in the appbar. Done." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText2" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="3" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="4" Text="Opponent Details" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="5" Text="This page contains the basic statistics of your play against choosen opponent." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="6" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="7" Text="The statistics are exactly the same as your normal statistics only that it is calculated on games against choosen opponen only." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText8" Grid.Row="8" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText9" Grid.Row="9" Text="Down in the bottom appbar there is a delete action available." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>

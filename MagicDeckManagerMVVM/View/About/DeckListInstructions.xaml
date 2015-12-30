@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.DeckListInstructions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="600" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Deck List" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText1" Grid.Row="1" Text="The deck list is actually two lists. One that shows all decks created and one that hides all but those marked as active." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText2" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="3" Text="The decks will turn colorcoded as soon as they have played five games." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="4" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="5" Text="There will always be a deck called Default Deck. This deck contains all games from decks deleted." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>

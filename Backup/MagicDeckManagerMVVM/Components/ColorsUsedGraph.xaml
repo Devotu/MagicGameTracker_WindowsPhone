@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MagicGameTracker.Components.ColorsUsedGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="230" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <Style x:Key="ColorNumberKey" TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="80"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="175" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbViewTitle" Grid.Row="0"  Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Colors used" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Canvas x:Name="ColorsUsedCanvas" Grid.Row="1" HorizontalAlignment="Left" Background="DarkGray" Margin="12,0,12,12" Width="400" Height="163">
+            <TextBlock Name="tbNumberOfBlack" Text="0" Style="{StaticResource ColorNumberKey}" Margin="0,160,0,0"/>
+            <TextBlock Name="tbNumberOfWhite" Text="0" Style="{StaticResource ColorNumberKey}" Margin="80,160,0,0"/>
+            <TextBlock Name="tbNumberOfRed" Text="0" Style="{StaticResource ColorNumberKey}" Margin="160,160,0,0"/>
+            <TextBlock Name="tbNumberOfBlue" Text="0" Style="{StaticResource ColorNumberKey}" Margin="240,160,0,0"/>
+            <TextBlock Name="tbNumberOfGreen" Text="0" Style="{StaticResource ColorNumberKey}" Margin="320,160,0,0"/>
+        </Canvas>
+    </Grid>
+</UserControl>

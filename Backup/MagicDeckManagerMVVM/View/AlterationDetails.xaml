@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MagicGameTracker.View.AlterationDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="lblDate" Grid.Row="0" Text="Date" FontWeight="Bold"/>
+        <TextBlock Name="txtDate" Grid.Row="1" HorizontalAlignment="Left" Margin="12,0,0,0" Text="{Binding Path=Date, Mode=OneWay}" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+        <TextBlock Name="lblComment" Grid.Row="2" Text="Comment" FontWeight="Bold"/>
+        <TextBlock Name="txtComment" Grid.Row="3" Height="144" HorizontalAlignment="Left" Margin="12,0,0,0" Text="{Binding Path=Comment, Mode=OneWay}" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+    </Grid>
+</UserControl>

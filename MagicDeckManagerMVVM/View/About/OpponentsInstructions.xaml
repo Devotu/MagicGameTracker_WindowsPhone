@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.OpponentsInstructions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Opponents" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText1" Grid.Row="1" Text="This page contains a list of registered opponents." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText2" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="3" Text="To add a new opponent press the plus sign down in the appbar." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="4" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="5" Text="To view opponent details select an opponent in the list." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="6" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="7" Text="There will always be an opponent named Default Opponent which cannot be deleted." Style="{StaticResource AboutText}"/>
+    </Grid>
+</UserControl>
