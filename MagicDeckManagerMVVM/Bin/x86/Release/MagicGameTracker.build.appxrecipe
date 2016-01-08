@@ -28,7 +28,7 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll">
       <PackagePath>Microsoft.Phone.Controls.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\x86\Release\Microsoft.Phone.Controls.Maps.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.Maps.dll">
       <PackagePath>Microsoft.Phone.Controls.Maps.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\x86\Sqlite.dll">
