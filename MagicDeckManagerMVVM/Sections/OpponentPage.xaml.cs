@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using MagicGameTracker.ViewModel;
 using MagicGameTracker.Logic.StatisticsReports;
 using MagicGameTracker.Logic;
+using MagicGameTracker.Model;
 
 namespace MagicGameTracker.Sections
 {
@@ -51,8 +52,16 @@ namespace MagicGameTracker.Sections
             _mvm.LoadAllGamesAgainstOpponent(_mvm.Opponents.First());
             _pr = statCalculator.CalculatePlayerStatistics(_mvm);
 
-            this.PlayerWinrateAgainstOpponentView.PopulatePlayerStatistics(_pr);
-            this.PlayerColorsAgainstOpponentView.PopulatePlayerCommonColors(_pr);
+            WinrateAgainstOpponentView.PopulatePlayerStatistics(_pr);
+
+            var games = from GameItem game in _mvm.Games select game;
+            WinrateAgainstOpponentGraph.PopulateWinrateHistory(games.ToList());
+
+            ColorsUsedAgainstOpponentGraph.PopulateColorsUsed(_pr.colorsUsed);
+
+            //Version 4.0.0.5
+            //this.PlayerWinrateAgainstOpponentView.PopulatePlayerStatistics(_pr);
+            //this.PlayerColorsAgainstOpponentView.PopulatePlayerCommonColors(_pr);
         }
 
         private void bHelp_Click(object sender, EventArgs e)

@@ -29,11 +29,11 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Decks" Height="72" HorizontalAlignment="Center" Margin="0,45,0,0" Name="bGoToDeckList" VerticalAlignment="Top" Width="374" Click="bGoToDeckList_Click" />
-            <Button Content="Player Statistics" Height="72" HorizontalAlignment="Center" Margin="0,123,0,0" Name="bGoToPlayerStatistics" VerticalAlignment="Top" Width="374" Click="bGoToPlayerStatistics_Click" />
+            <Button Content="Statistics" Height="72" HorizontalAlignment="Center" Margin="0,123,0,0" Name="bGoToPlayerStatistics" VerticalAlignment="Top" Width="374" Click="bGoToPlayerStatistics_Click" />
             <Button Content="Opponents" Height="72" HorizontalAlignment="Center" Margin="0,201,0,0" Name="bGoToOpponents" VerticalAlignment="Top" Width="374" Click="bGoToOpponents_Click" />
-            <Button Content="Export/Import" Height="72" HorizontalAlignment="Center" Margin="0,279,0,0" Name="bGoToExport" VerticalAlignment="Top" Width="374" Click="bGoToExport_Click" />
+            <!--<Button Content="Export/Import" Height="72" HorizontalAlignment="Center" Margin="0,279,0,0" Name="bGoToExport" VerticalAlignment="Top" Width="374" Click="bGoToExport_Click" />-->
             <TextBlock Name="tbNews" Height="100" HorizontalAlignment="Center" Margin="30,240,30,0" Width="320" TextAlignment="Center" Text="Upon popular request                 deck edit is now availabe" TextWrapping="Wrap" Foreground="DarkKhaki"/>
-            <Button Content="About" Height="72" HorizontalAlignment="Center" Margin="0,0,0,45" Name="bAbout" VerticalAlignment="Bottom" Width="374" Click="bAbout_Click" />
+            <Button Content="Help/About" Height="72" HorizontalAlignment="Center" Margin="0,0,0,45" Name="bAbout" VerticalAlignment="Bottom" Width="374" Click="bAbout_Click" />
         </Grid>
     </Grid>
  

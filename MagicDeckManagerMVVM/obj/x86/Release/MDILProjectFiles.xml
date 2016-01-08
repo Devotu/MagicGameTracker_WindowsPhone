@@ -29,8 +29,6 @@
     <File>Microsoft.Phone.Controls.dll</File>
     <File>Sqlite.winmd</File>
     <File>Microsoft.Phone.Controls.Maps.dll</File>
-    <File>Microsoft.Advertising.Mobile.xml</File>
-    <File>Microsoft.Advertising.Mobile.UI.xml</File>
     <File>Sqlite.dll</File>
     <File>sqlite3.dll</File>
     <File>WMAppManifest.xml</File>
