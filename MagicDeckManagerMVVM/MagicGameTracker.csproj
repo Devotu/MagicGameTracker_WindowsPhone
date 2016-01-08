@@ -133,6 +133,7 @@
     <Compile Include="Converters\WinToBrushConverter.cs" />
     <Compile Include="Converters\WinToTextConverter.cs" />
     <Compile Include="Logic\MagicEnums.cs" />
+    <Compile Include="Logic\MagicEventArgs.cs" />
     <Compile Include="Logic\RatingColorValues.cs" />
     <Compile Include="Logic\StatisticReports.cs" />
     <Compile Include="Logic\StatisticsCalculator.cs" />

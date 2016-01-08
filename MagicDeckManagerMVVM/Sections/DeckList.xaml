@@ -13,7 +13,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    xmlns:views="clr-namespace:MagicGameTracker.View" >
+    xmlns:views="clr-namespace:MagicGameTracker.View"
+    xmlns:components="clr-namespace:MagicGameTracker.Components">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -30,6 +31,18 @@
             <controls:PivotItem Header="All decks">
                 <Grid>
                     <views:DeckListView x:Name="AllDecks" />
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item three-->
+            <controls:PivotItem Header="Filter">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <components:PickFormatComponent x:Name="FormatPicker" Grid.Row="0"/>
+                    <views:DeckListView x:Name="FilterDecks" Grid.Row="1"/>
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.Phone.Controls;
 using MagicGameTracker.ViewModel;
+using System.Windows;
+using MagicGameTracker.Logic.MagicEventArgs;
 
 namespace MagicGameTracker.Sections
 {
@@ -11,6 +13,8 @@ namespace MagicGameTracker.Sections
         public DeckList()
         {
             InitializeComponent();
+
+            this.FormatPicker.SelectedFormatChange += new EventHandler<FormatEventArgs>(SelectedFormatChange_Handler);
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -35,6 +39,13 @@ namespace MagicGameTracker.Sections
         private void bAddDeck_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Sections/NewDeck.xaml", UriKind.Relative));
+        }
+
+        public void SelectedFormatChange_Handler(object sender, FormatEventArgs e)
+        {
+            _mvm.LoadDecksByFormatFromDatabase(e.format);
+            _mvm.SortDecksByWinrate();
+            this.FilterDecks.DataContext = _mvm.Decks;
         }
     }
 }
