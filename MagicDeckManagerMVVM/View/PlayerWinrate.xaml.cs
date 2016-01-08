@@ -13,6 +13,7 @@ namespace MagicGameTracker.View
 
         public void PopulatePlayerStatistics(PlayerReport pr)
         {
+            txtTotal.Text = (pr.Wins + pr.Losses).ToString();
             txtWin.Text = pr.Wins.ToString();
             txtLoss.Text = pr.Losses.ToString();
             txtPercent.Text = pr.WinPercent.ToString();

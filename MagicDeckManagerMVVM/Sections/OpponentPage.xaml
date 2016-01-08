@@ -14,6 +14,7 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
     xmlns:views="clr-namespace:MagicGameTracker.View"
+    xmlns:components="clr-namespace:MagicGameTracker.Components"
     xmlns:ads="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -31,12 +32,12 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="175"/>
+                        <RowDefinition Height="175"/>
                     </Grid.RowDefinitions>
-                    <views:PlayerWinrate x:Name="PlayerWinrateAgainstOpponentView" Grid.Row="0"/>
-                    <views:PlayerCommonColors x:Name="PlayerColorsAgainstOpponentView" Grid.Row="1" />
-                    <TextBlock Name="StatisticsExplanation" Text="(All these statistics refer to your play)" Grid.Row="2" />
+                    <views:PlayerWinrate x:Name="WinrateAgainstOpponentView" Grid.Row="0"/>
+                    <components:WinrateHistoryGraphSlim x:Name="WinrateAgainstOpponentGraph" Grid.Row="1" />
+                    <components:ColorsUsedGraphSlim x:Name="ColorsUsedAgainstOpponentGraph" Grid.Row="2" />
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

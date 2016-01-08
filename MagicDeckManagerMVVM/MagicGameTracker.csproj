@@ -104,6 +104,9 @@
     <Compile Include="Components\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ColorsUsedGraphSlim.xaml.cs">
+      <DependentUpon>ColorsUsedGraphSlim.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\ColorsUsedGraph.xaml.cs">
       <DependentUpon>ColorsUsedGraph.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,9 @@
     </Compile>
     <Compile Include="Components\PickOpponentComponent.xaml.cs">
       <DependentUpon>PickOpponentComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WinrateHistoryGraphSlim.xaml.cs">
+      <DependentUpon>WinrateHistoryGraphSlim.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\WinrateHistoryGraph.xaml.cs">
       <DependentUpon>WinrateHistoryGraph.xaml</DependentUpon>
@@ -278,6 +284,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Components\ColorsUsedGraphSlim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Components\ColorsUsedGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,6 +309,10 @@
     <Page Include="Components\PickOpponentComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\WinrateHistoryGraphSlim.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
