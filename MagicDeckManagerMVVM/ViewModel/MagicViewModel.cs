@@ -140,19 +140,17 @@ namespace MagicGameTracker.ViewModel
             {
                 Decks.Add(deck);
             }
-        }
 
-        //Ladda bara lekar av ett format
-        public void LoadDecksByFormatFromDatabase(DeckFormats format)
-        {
-            var formatDecksInDB = from DeckItem deck in _magicDb.Decks where deck.Format == format.ToString() select deck;
+            /*
+            ActiveDecks = new ObservableCollection<DeckItem>();
 
-            Decks = new ObservableCollection<DeckItem>();
-
-            foreach (var deck in formatDecksInDB)
+            foreach (var deck in activeDecksInDB)
             {
-                Decks.Add(deck);
-            }
+                if (deck.Active)
+                {
+                    ActiveDecks.Add(deck);
+                }
+            }*/
         }
 
         //Hämta en specifik lek

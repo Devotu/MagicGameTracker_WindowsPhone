@@ -13,6 +13,15 @@ namespace MagicGameTracker.View
         public NewDeckView()
         {
             InitializeComponent();
+            List<string> deckFormats = new List<string>();
+            foreach (var f in typeof(DeckFormats).GetFields())
+            {
+                if (f.IsLiteral)
+                {
+                    deckFormats.Add(f.Name);
+                }
+            }
+            this.FormatPicker.lbFormatsToPick.ItemsSource = deckFormats;
         }
 
         private void tbName_GotFocus(object sender, RoutedEventArgs e)
