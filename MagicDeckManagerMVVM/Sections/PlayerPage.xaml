@@ -36,8 +36,8 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <views:PlayerWinrate x:Name="PlayerWinrateView" Grid.Row="0"/>
-                    <views:PlayerCommonColors x:Name="PlayerCommonColorsView" Grid.Row="1" Margin="0,0,0,0"/>
-                    <components:ColorsUsedGraph x:Name="PlayerColorsUsedGraph" Grid.Row="2" Margin="0,0,0,0"/>
+                    <components:WinrateHistoryGraphSlim x:Name="PlayerWinrateGraph" Grid.Row="1" Margin="0,0,0,0"/>
+                    <components:ColorsUsedGraphSlim x:Name="PlayerColorsUsedGraph" Grid.Row="2" Margin="0,0,0,0"/>
                 </Grid>
             </controls:PivotItem>
             
@@ -50,8 +50,8 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <views:PlayerWinrate x:Name="ActivePlayerWinrateView" Grid.Row="0"/>
-                    <views:PlayerCommonColors x:Name="ActiveCommonColorsView" Grid.Row="1" Margin="0,0,0,0"/>
-                    <components:ColorsUsedGraph x:Name="ActiveColorsUsedGraph" Grid.Row="2" Margin="0,0,0,0"/>
+                    <components:WinrateHistoryGraphSlim x:Name="ActiveWinrateGraph" Grid.Row="1" Margin="0,0,0,0"/>
+                    <components:ColorsUsedGraphSlim x:Name="ActiveColorsUsedGraph" Grid.Row="2" Margin="0,0,0,0"/>
                 </Grid>
             </controls:PivotItem>
 
@@ -64,8 +64,8 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <views:PlayerWinrate x:Name="TodayPlayerWinrateView" Grid.Row="0"/>
-                    <views:PlayerCommonColors x:Name="TodayPlayerCommonColorsView" Grid.Row="1" Margin="0,0,0,0"/>
-                    <components:ColorsUsedGraph x:Name="TodayColorsUsedGraph" Grid.Row="2" Margin="0,0,0,0"/>
+                    <components:WinrateHistoryGraphSlim x:Name="TodayWinrateGraph" Grid.Row="1" Margin="0,0,0,0"/>
+                    <components:ColorsUsedGraphSlim x:Name="TodayColorsUsedGraph" Grid.Row="2" Margin="0,12,0,0"/>
                 </Grid>
             </controls:PivotItem>
 
