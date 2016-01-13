@@ -1,25 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="" />
-  <App xmlns="" ProductID="{38515c7a-f605-4ebf-8f12-5e105e930a86}" Title="Magic Game Tracker" RuntimeType="Silverlight" Version="4.1.0.16" Genre="apps.normal" Author="O.Tuvesson" Description="Simple Game Tracker application" Publisher="Devotu" PublisherID="{1249a267-793b-43bb-85de-fd631a719450}">
+  <App xmlns="" ProductID="{38515c7a-f605-4ebf-8f12-5e105e930a86}" Title="Magic Game Tracker" RuntimeType="Silverlight" Version="4.1.0.20" Genre="apps.normal" Author="O.Tuvesson" Description="Simple Game Tracker application" Publisher="Devotu" PublisherID="{1249a267-793b-43bb-85de-fd631a719450}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
-      <Capability Name="ID_CAP_GAMERSERVICES" />
-      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
-      <Capability Name="ID_CAP_IDENTITY_USER" />
-      <Capability Name="ID_CAP_LOCATION" />
-      <Capability Name="ID_CAP_MICROPHONE" />
-      <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_PHONEDIALER" />
-      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
-      <Capability Name="ID_CAP_SENSORS" />
-      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
-      <Capability Name="ID_CAP_ISV_CAMERA" />
-      <Capability Name="ID_CAP_CONTACTS" />
-      <Capability Name="ID_CAP_APPOINTMENTS" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainMenu.xaml" />
