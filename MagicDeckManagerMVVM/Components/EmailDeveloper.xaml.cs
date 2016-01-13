@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 using Microsoft.Phone.Tasks;
+using MagicGameTracker.Logic;
 
 namespace MagicGameTracker.Components
 {
@@ -19,9 +20,12 @@ namespace MagicGameTracker.Components
             this.Visibility = System.Windows.Visibility.Collapsed;
 
             EmailComposeTask emailComposeTast = new EmailComposeTask();
+            VersionFetcher versionFetcher = new VersionFetcher();
 
             emailComposeTast.Subject = this.tbSubject.Text;
-            emailComposeTast.Body = this.tbCommentsToSend.Text;
+            emailComposeTast.Body = this.tbCommentsToSend.Text +
+                "\nI'm using Magic Game Tracker for Windows Phone version " +
+                versionFetcher.getAppVersion();
             emailComposeTast.To = "devotu.developer@gmail.com";
 
             emailComposeTast.Show();

@@ -32,7 +32,6 @@
     <File>Microsoft.Advertising.Mobile.xml</File>
     <File>Microsoft.Advertising.Mobile.UI.xml</File>
     <File>Sqlite.dll</File>
-    <File>sqlite3.dll</File>
     <File>WMAppManifest.xml</File>
     <File>Background.png</File>
     <File>ApplicationIcon.png</File>
