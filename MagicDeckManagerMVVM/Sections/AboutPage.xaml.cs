@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Xml;
+using MagicGameTracker.Logic;
 
 namespace MagicGameTracker.Sections
 {
@@ -25,22 +26,9 @@ namespace MagicGameTracker.Sections
         {
             base.OnNavigatedTo(e);
 
-            this.tbVersion.DataContext = GetAppVersion().ToString();
-        }
+            VersionFetcher versionFetcher = new VersionFetcher();
 
-        public static string GetAppVersion()
-        {
-            var xmlReaderSettings = new XmlReaderSettings
-            {
-                XmlResolver = new XmlXapResolver()
-            };
-
-            using (var xmlReader = XmlReader.Create("WMAppManifest.xml", xmlReaderSettings))
-            {
-                xmlReader.ReadToDescendant("App");
-
-                return xmlReader.GetAttribute("Version");
-            }
+            this.tbVersion.DataContext = versionFetcher.getAppVersion();
         }
     }
 }

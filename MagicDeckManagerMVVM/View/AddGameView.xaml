@@ -51,7 +51,7 @@
             </Grid.RowDefinitions>
             <TextBlock Name="lblWinLoss" Grid.Row="0" Height="25" HorizontalAlignment="Left" Margin="12,-5,0,0" Text="Win / Loss" VerticalAlignment="Top" Width="Auto" FontWeight="Bold"/>
             <RadioButton Name="rbWin" Grid.Row="1" Content="Win" GroupName="WinDrawLoss" Height="72" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" />
-            <RadioButton Name="rbDraw" Grid.Row="1" Content="Draw" GroupName="WinDrawLoss" Height="72" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" />
+            <!--<RadioButton Name="rbDraw" Grid.Row="1" Content="Draw" GroupName="WinDrawLoss" Height="72" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" />-->
             <RadioButton Name="rbLoss" Grid.Row="1" Content="Loss" GroupName="WinDrawLoss" Height="72" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" />
         </Grid>
             </Grid>

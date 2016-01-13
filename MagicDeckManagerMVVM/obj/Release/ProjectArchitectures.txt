@@ -1,0 +1,1 @@
+C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\MagicGameTracker.csproj;neutral

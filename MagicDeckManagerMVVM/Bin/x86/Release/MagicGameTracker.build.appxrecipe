@@ -106,9 +106,6 @@
     <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\x86\Release\Microsoft.Advertising.Mobile.UI.xml">
       <PackagePath>Microsoft.Advertising.Mobile.UI.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\SQLite.WP80\3.9.1\Redist\Retail\x86\sqlite3.dll">
-      <PackagePath>sqlite3.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Assets\BadgeLogo.png">
       <PackagePath>Assets\BadgeLogo.png</PackagePath>
     </AppxPackagedFile>
