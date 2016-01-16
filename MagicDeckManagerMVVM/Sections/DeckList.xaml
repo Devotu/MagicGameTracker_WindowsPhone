@@ -39,7 +39,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="456" />
                     </Grid.RowDefinitions>
                     <components:PickFormatComponent x:Name="FormatPicker" Grid.Row="0"/>
                     <views:DeckListView x:Name="FilterDecks" Grid.Row="1"/>
