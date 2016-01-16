@@ -41,7 +41,7 @@ namespace MagicGameTracker
                     }
                 }
 
-                string format = "Custom";
+                string format = "Standard";
                 if (this.NewDeck.FormatPicker.lbFormatsToPick.SelectedItem != null)
                 {
                     format = this.NewDeck.FormatPicker.lbFormatsToPick.SelectedItem.ToString();
@@ -53,8 +53,6 @@ namespace MagicGameTracker
                     Colors = _colors,
                     Theme = NewDeck.tbTheme.Text,
                     DateCreated = dateCreated,
-                    //DateAltered = DateTime.Now,
-                    //Revision = 1,
                     Format = format,
                     Active = true
                 };

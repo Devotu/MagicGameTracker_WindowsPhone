@@ -97,9 +97,6 @@ namespace MagicGameTracker.Sections
                     comment = "No Comment";
                 }
 
-                //Version 4.0.0.0
-
-
                 GameItem newGameItem = new GameItem
                 {
                     Colors = colors,
