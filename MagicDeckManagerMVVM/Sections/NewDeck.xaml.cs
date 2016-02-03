@@ -26,6 +26,7 @@ namespace MagicGameTracker
                 DateTime dateCreated = DateTime.Now;
                 var colorPicker = VisualTreeHelper.GetChild(VisualTreeHelper.GetChild(NewDeck.ColorPanel, 0), 0);
                 int count = VisualTreeHelper.GetChildrenCount(colorPicker);
+                bool colored = false;
                 //För varje Color Checkbox
                 for (int i = 0; i < count; i++)
                 {
@@ -34,12 +35,14 @@ namespace MagicGameTracker
                     if (Convert.ToBoolean(colorCheckbox.IsChecked))
                     {
                         _colors = _colors + "1";
+                        colored = true;
                     }
                     else
                     {
                         _colors = _colors + "0";
                     }
                 }
+                _colors = !colored ? _colors = _colors + "1" : _colors = _colors + "0";
 
                 string format = "Standard";
                 if (this.NewDeck.FormatPicker.lbFormatsToPick.SelectedItem != null)

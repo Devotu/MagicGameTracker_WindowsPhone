@@ -29,6 +29,9 @@
         <Style x:Key="ManaColorImageGreen" TargetType="Image" BasedOn="{StaticResource ManaColorImage}">
             <Setter Property="Source" Value="..\images\green_mana_big_bw.png"/>
         </Style>
+        <Style x:Key="ManaColorImageDevoid" TargetType="Image" BasedOn="{StaticResource ManaColorImage}">
+            <Setter Property="Source" Value="..\images\devoid_mana_big_bw.png"/>
+        </Style>
         <converters:WinToTextConverter x:Key="winToTextConverter"/>
         <converters:DoubleToPerformanceRatingBrushConverter x:Key="doubleToPerformanceRatingBrushConverter"/>
     </UserControl.Resources>
@@ -57,12 +60,14 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
             <Image x:Name="imBlack" Grid.Column="0" Style="{StaticResource ManaColorImageBlack}" />
             <Image x:Name="imWhite" Grid.Column="1" Style="{StaticResource ManaColorImageWhite}"/>
             <Image x:Name="imRed" Grid.Column="2" Style="{StaticResource ManaColorImageRed}"/>
             <Image x:Name="imBlue" Grid.Column="3" Style="{StaticResource ManaColorImageBlue}"/>
             <Image x:Name="imGreen" Grid.Column="4" Style="{StaticResource ManaColorImageGreen}"/>
+            <Image x:Name="imDevoid" Grid.Column="5" Style="{StaticResource ManaColorImageDevoid}"/>
         </Grid>
         <Grid Grid.Row="6" Height="Auto" Margin="0,20,0,0">
             <Grid.RowDefinitions>

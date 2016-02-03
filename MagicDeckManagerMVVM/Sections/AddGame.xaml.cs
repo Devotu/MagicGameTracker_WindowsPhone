@@ -78,6 +78,8 @@ namespace MagicGameTracker.Sections
                 colors = (Convert.ToBoolean(colorPicker.cbRed.IsChecked)) ? colors + "1" : colors + "0";
                 colors = (Convert.ToBoolean(colorPicker.cbBlue.IsChecked)) ? colors + "1" : colors + "0";
                 colors = (Convert.ToBoolean(colorPicker.cbGreen.IsChecked)) ? colors + "1" : colors + "0";
+                colors = (Convert.ToBoolean(colorPicker.cbDevoid.IsChecked)) ? colors + "1" : colors + "0";
+                colors = (colors == "000000") ? colors + "1" : colors + "0";
 
                 OpponentItem opponent = new OpponentItem();
 

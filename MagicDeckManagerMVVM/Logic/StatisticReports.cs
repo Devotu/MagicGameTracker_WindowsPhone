@@ -46,8 +46,8 @@ namespace MagicGameTracker.Logic
                 this.Wins = 0;
                 this.Losses = 0;
                 this.WinPercent = 0;
-                this.colorsUsed = new List<double>{0, 0, 0, 0, 0};
-                this.colorsInDecks = new List<double> { 0, 0, 0, 0, 0 };
+                this.colorsUsed = new List<double>{0, 0, 0, 0, 0, 0, 0};
+                this.colorsInDecks = new List<double> {0, 0, 0, 0, 0, 0, 0};
             }
         }
     }
