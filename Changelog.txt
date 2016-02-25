@@ -20,5 +20,5 @@ Justerad höjd på filtrerad lista
 Färgen Devoid finns
 Ingen färg räknas som färgen Colorless
 
-4.2.0.7
+4.2.0.8
 Ruta med ändringar uppdaterad
