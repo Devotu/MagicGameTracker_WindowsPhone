@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="25909Apparat.MagicGameTracker" Publisher="CN=097DB3E7-4AE4-43D3-8E89-E876763255DA" Version="4.1.1.27" />
+  <Identity Name="25909Apparat.MagicGameTracker" Publisher="CN=097DB3E7-4AE4-43D3-8E89-E876763255DA" Version="4.2.0.8" />
   <mp:PhoneIdentity PhoneProductId="38515c7a-f605-4ebf-8f12-5e105e930a86" PhonePublisherId="1249a267-793b-43bb-85de-fd631a719450" />
   <Properties>
     <DisplayName>MagicGameTracker</DisplayName>

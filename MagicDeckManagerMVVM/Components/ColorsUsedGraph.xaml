@@ -13,7 +13,7 @@
         <Style x:Key="ColorNumberKey" TargetType="TextBlock">
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Width" Value="80"/>
+            <Setter Property="Width" Value="52"/>
         </Style>
     </UserControl.Resources>
 
@@ -25,10 +25,12 @@
         <TextBlock Name="tbViewTitle" Grid.Row="0"  Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" Text="Colors used" VerticalAlignment="Top" FontWeight="Bold"/>
         <Canvas x:Name="ColorsUsedCanvas" Grid.Row="1" HorizontalAlignment="Left" Background="DarkGray" Margin="12,0,12,12" Width="400" Height="163">
             <TextBlock Name="tbNumberOfBlack" Text="0" Style="{StaticResource ColorNumberKey}" Margin="0,160,0,0"/>
-            <TextBlock Name="tbNumberOfWhite" Text="0" Style="{StaticResource ColorNumberKey}" Margin="80,160,0,0"/>
-            <TextBlock Name="tbNumberOfRed" Text="0" Style="{StaticResource ColorNumberKey}" Margin="160,160,0,0"/>
-            <TextBlock Name="tbNumberOfBlue" Text="0" Style="{StaticResource ColorNumberKey}" Margin="240,160,0,0"/>
-            <TextBlock Name="tbNumberOfGreen" Text="0" Style="{StaticResource ColorNumberKey}" Margin="320,160,0,0"/>
+            <TextBlock Name="tbNumberOfWhite" Text="0" Style="{StaticResource ColorNumberKey}" Margin="57,160,0,0"/>
+            <TextBlock Name="tbNumberOfRed" Text="0" Style="{StaticResource ColorNumberKey}" Margin="114,160,0,0"/>
+            <TextBlock Name="tbNumberOfBlue" Text="0" Style="{StaticResource ColorNumberKey}" Margin="171,160,0,0"/>
+            <TextBlock Name="tbNumberOfGreen" Text="0" Style="{StaticResource ColorNumberKey}" Margin="228,160,0,0"/>
+            <TextBlock Name="tbNumberOfDevoid" Text="0" Style="{StaticResource ColorNumberKey}" Margin="285,160,0,0"/>
+            <TextBlock Name="tbNumberOfColorless" Text="0" Style="{StaticResource ColorNumberKey}" Margin="342,160,0,0"/>
         </Canvas>
     </Grid>
 </UserControl>

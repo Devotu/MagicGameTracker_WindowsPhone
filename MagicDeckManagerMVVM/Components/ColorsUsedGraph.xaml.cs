@@ -28,18 +28,21 @@ namespace MagicGameTracker.Components
         {
             Double maxValue = usages.Max();
 
-            for (int i = 0; i < 5; i++)
+            int numberOfColors = 7;
+            double barSpace = pcw / numberOfColors;
+
+            for (int i = 0; i < numberOfColors; i++)
             {
                 Canvas tmpCanvas = new Canvas();
-                tmpCanvas.Width = (pcw / 5) - (pcw / 5 / 10) * 2;
+                tmpCanvas.Width = (barSpace) - (barSpace / 10) * 2;
                 Double canvasHeight = 1;
                 if (usages[i] > 0)
                 {
                     canvasHeight = usages[i] / (maxValue / (pch - (pch / 20)));
                 }
                 tmpCanvas.Height = canvasHeight;
-                Canvas.SetLeft(tmpCanvas, (((i + 1) * (pcw / 5)) - ((pcw / 10) + ((pcw / 10 / 5) * 4))));
-                Canvas.SetTop(tmpCanvas, pch - canvasHeight);              
+                Canvas.SetLeft(tmpCanvas, (((i + 1) * barSpace) - ((pcw / (2 * numberOfColors)) + ((barSpace / 10) * 4))));
+                Canvas.SetTop(tmpCanvas, pch - canvasHeight);             
 
                 switch (i)
                 {
@@ -63,8 +66,16 @@ namespace MagicGameTracker.Components
                         tmpCanvas.Background = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
                         this.tbNumberOfGreen.Text = usages[i].ToString();
                         break;
+                    case 5:
+                        tmpCanvas.Background = new SolidColorBrush(Color.FromArgb(200, 200, 200, 0));
+                        this.tbNumberOfDevoid.Text = usages[i].ToString();
+                        break;
+                    case 6:
+                        tmpCanvas.Background = new SolidColorBrush(Color.FromArgb(67, 67, 67, 0));
+                        this.tbNumberOfColorless.Text = usages[i].ToString();
+                        break;
                     default:
-                        tmpCanvas.Background = new SolidColorBrush(Color.FromArgb(255, 200, 200, 200));
+                        tmpCanvas.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
                         break;
                 }
 

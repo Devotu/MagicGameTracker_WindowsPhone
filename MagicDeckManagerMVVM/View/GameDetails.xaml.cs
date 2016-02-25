@@ -16,11 +16,17 @@ namespace MagicGameTracker.View
         {
             Image colorImage;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 colorImage = VisualTreeHelper.GetChild(grOpponentColors, i) as Image;
 
-                var colorIsActive = colorCode[i];
+                var colorIsActive = 0;
+                try //HACK programmering med try/catch
+                {
+                    colorIsActive = colorCode[i];
+                }
+                catch (Exception)
+                { }
 
                 if (colorIsActive == '1')
                 {
@@ -40,6 +46,9 @@ namespace MagicGameTracker.View
                             break;
                         case 4:
                             colorImage.Source = new BitmapImage(new Uri(@"\images\green_mana_big.png", UriKind.Relative));
+                            break;
+                        case 5:
+                            colorImage.Source = new BitmapImage(new Uri(@"\images\devoid_mana_big.png", UriKind.Relative));
                             break;
                         default:
                             break;

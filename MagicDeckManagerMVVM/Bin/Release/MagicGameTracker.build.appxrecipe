@@ -131,6 +131,12 @@
     <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Images\appbar.questionmark.rest.png">
       <PackagePath>Images\appbar.questionmark.rest.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Images\devoid_mana_big.png">
+      <PackagePath>Images\devoid_mana_big.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Images\devoid_mana_big_bw.png">
+      <PackagePath>Images\devoid_mana_big_bw.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Images\appbar.cancel.rest.png">
       <PackagePath>Images\appbar.cancel.rest.png</PackagePath>
     </AppxPackagedFile>

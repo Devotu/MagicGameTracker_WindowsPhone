@@ -155,13 +155,26 @@ namespace MagicGameTracker.Logic
                 new SortableColor {color = ManaColor.Red, number = 0},
                 new SortableColor {color = ManaColor.Blue, number = 0},
                 new SortableColor {color = ManaColor.Green, number = 0},
+                new SortableColor {color = ManaColor.Devoid, number = 0},
+                new SortableColor {color = ManaColor.None, number = 0},
             };
 
             foreach (var str in colorStrings)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 7; i++)
                 {
-                    fiveColors.ElementAt(i).number = str.Substring(i, 1) == "1" ? fiveColors.ElementAt(i).number + 1 : fiveColors.ElementAt(i).number + 0;
+                    bool inUse = false;
+                    try //HACK programmering med try/catch
+                    {
+                        if (str.Substring(i, 1) == "1")
+                        {
+                            inUse = true;
+                        }
+                    }
+                    catch (Exception)
+                    { }
+                    
+                    fiveColors.ElementAt(i).number = inUse ? fiveColors.ElementAt(i).number + 1 : fiveColors.ElementAt(i).number + 0;
                 }
             }
 
@@ -186,10 +199,21 @@ namespace MagicGameTracker.Logic
         private void AddColorsUsed(List<double> colorList, List<string> colorsPlayed)
         {
             foreach (var str in colorsPlayed)
-            {
-                for (int i = 0; i < 5; i++)
+            {                
+                for (int i = 0; i < 7; i++)
                 {
-                    colorList[i] = str.Substring(i, 1) == "1" ? colorList[i] + 1 : colorList[i] + 0;
+                    bool inUse = false;
+                    try //HACK programmering med try/catch
+                    {
+                        if (str.Substring(i, 1) == "1")
+                        {
+                            inUse = true;
+                        }
+                    }
+                    catch (Exception)
+                    { }
+
+                    colorList[i] = inUse ? colorList[i] + 1 : colorList[i] + 0;
                 }
             }            
         }

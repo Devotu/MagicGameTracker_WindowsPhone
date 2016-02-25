@@ -52,7 +52,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\Release</OutputPath>
-    <DefineConstants>TRACE;USE_WP8_NATIVE_SQLITE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -610,6 +610,8 @@
     <Content Include="Assets\WideLogo.png" />
     <Content Include="Images\appbar.delete.rest.png" />
     <Content Include="Images\appbar.questionmark.rest.png" />
+    <Content Include="Images\devoid_mana_big.png" />
+    <Content Include="Images\devoid_mana_big_bw.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\appbar.cancel.rest.png" />
     <Content Include="Images\appbar.add.rest.png" />
