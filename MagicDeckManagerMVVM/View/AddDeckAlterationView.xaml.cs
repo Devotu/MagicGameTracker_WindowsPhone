@@ -40,5 +40,15 @@ namespace MagicGameTracker.View
                 tbComment.Foreground = BrushHint;
             }
         }
+
+        public void Collapse(int reduction)
+        {
+            this.tbComment.Height = this.tbComment.Height - reduction;
+        }
+
+        public void Expand(int expansion)
+        {
+            this.tbComment.Height = this.tbComment.Height - expansion;
+        }
     }
 }

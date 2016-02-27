@@ -51,5 +51,12 @@ namespace MagicGameTracker.Components
         }
 
         public event EventHandler<FormatEventArgs> SelectedFormatChange;
+
+        internal void PresetFormat(string format)
+        {
+            //HACK Fungerar ej av oklar anledning, löses med If på annat ställe tills vidare
+            this.lbFormatsToPick.SelectedItem = (ListBoxItem)this.lbFormatsToPick.FindName(format);
+            this.bShowFormats.Content = format;
+        }
     }
 }

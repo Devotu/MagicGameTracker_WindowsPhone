@@ -18,11 +18,23 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="{StaticResource ApplicationName}">
+        <controls:Pivot x:Name="Pivot" Title="{StaticResource ApplicationName}">
             <!--Pivot item one-->
-            <controls:PivotItem Header="Deck Alteration">
+            <controls:PivotItem Header="Quick">
                 <Grid>
-                    <views:AddDeckAlterationView x:Name="AddDeckAlterationView"/>
+                    <views:AddDeckAlterationView x:Name="AddDeckAlterationViewQuick"/>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Full">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <views:NewDeckView x:Name="NewDeck" Height="400" Grid.Row="0" VerticalAlignment="Top"/>
+                    <views:AddDeckAlterationView x:Name="AddDeckAlterationViewFull" Grid.Row="1"/>
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

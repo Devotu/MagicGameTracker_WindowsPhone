@@ -7,7 +7,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="500" d:DesignWidth="456"
+    d:DesignHeight="480" d:DesignWidth="456"
     xmlns:views="clr-namespace:MagicGameTracker.View"
     xmlns:components="clr-namespace:MagicGameTracker.Components">
     

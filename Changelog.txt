@@ -22,3 +22,6 @@ Ingen färg räknas som färgen Colorless
 
 4.2.0.8
 Ruta med ändringar uppdaterad
+
+4.3.0.5
+Edit deck details finns
