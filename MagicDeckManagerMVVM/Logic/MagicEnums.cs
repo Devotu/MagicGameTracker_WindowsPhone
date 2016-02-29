@@ -5,7 +5,7 @@ namespace MagicGameTracker.Logic
     {
         public enum ManaColor
         {
-            Black, White, Red, Blue, Green, Devoid, None
+            Black, White, Red, Blue, Green, Devoid, Colorless
         }
 
         public enum DeckFormats

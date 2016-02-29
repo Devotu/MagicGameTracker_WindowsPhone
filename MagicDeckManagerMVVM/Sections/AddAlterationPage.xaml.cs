@@ -6,6 +6,7 @@ using MagicGameTracker.ViewModel;
 using MagicGameTracker.Model;
 using System.Windows.Controls;
 using System.Windows.Media;
+using MagicGameTracker.Logic.MagicEnums;
 
 namespace MagicGameTracker.Sections
 {
@@ -132,21 +133,49 @@ namespace MagicGameTracker.Sections
                 //Color
                 if (this.NewDeck.ColorPicker.HasChanged())
                 {
-                    string colors = "";
-                    colors = this.NewDeck.ColorPicker.cbBlack.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = this.NewDeck.ColorPicker.cbWhite.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = this.NewDeck.ColorPicker.cbRed.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = this.NewDeck.ColorPicker.cbBlue.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = this.NewDeck.ColorPicker.cbGreen.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = this.NewDeck.ColorPicker.cbDevoid.IsChecked == true ? colors + "1" : colors + "0";
-                    colors = colors == "000000" ? colors + "1" : colors + "0";
+                    string binColors = "";
+                    binColors = this.NewDeck.ColorPicker.cbBlack.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = this.NewDeck.ColorPicker.cbWhite.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = this.NewDeck.ColorPicker.cbRed.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = this.NewDeck.ColorPicker.cbBlue.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = this.NewDeck.ColorPicker.cbGreen.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = this.NewDeck.ColorPicker.cbDevoid.IsChecked == true ? binColors + "1" : binColors + "0";
+                    binColors = binColors == "000000" ? binColors + "1" : binColors + "0";
 
-                    _mvm.FocusDeck.First().Colors = colors;
+                    string originalColors = "";
+                    for (int i = 0; i < _originalDeckItem.Colors.Length; i++)
+                    {
+                        if (_originalDeckItem.Colors.Substring(i, 1) == "1")
+                        {
+                            ManaColor manaColor = (ManaColor)i;
+                            originalColors = originalColors + ", " + manaColor.ToString();
+                        }                        
+                    }
+                    if (originalColors != "")
+                    {
+                        originalColors = originalColors.Substring(2, originalColors.Length - 2);
+                    }
+
+                    string newColors = "";
+                    for (int i = 0; i < binColors.Length; i++)
+                    {
+                        if (binColors.Substring(i, 1) == "1")
+                        {
+                            ManaColor manaColor = (ManaColor)i;
+                            newColors = newColors + ", " + manaColor.ToString();
+                        }
+                    }
+                    if (newColors != "")
+                    {
+                        newColors = newColors.Substring(2, newColors.Length - 2);
+                    }
+
+                    _mvm.FocusDeck.First().Colors = binColors;
                     if (newAlterationItem.Comment != "")
                     {
                         newAlterationItem.Comment = newAlterationItem.Comment + " ";
                     }
-                    newAlterationItem.Comment = newAlterationItem.Comment + "Colors changed from " + _originalDeckItem.Colors + " to " + _mvm.FocusDeck.First().Colors + ".";
+                    newAlterationItem.Comment = newAlterationItem.Comment + "Colors changed from " + originalColors + " to " + newColors + ".";
                 }
 
                 //Theme
@@ -166,7 +195,7 @@ namespace MagicGameTracker.Sections
                 {
                     if (newAlterationItem.Comment != "")
                     {
-                        newAlterationItem.Comment = newAlterationItem.Comment + " ";
+                        newAlterationItem.Comment = newAlterationItem.Comment + ".";
                     }
                     newAlterationItem.Comment = newAlterationItem.Comment + this.AddDeckAlterationViewFull.tbComment.Text;
                 }

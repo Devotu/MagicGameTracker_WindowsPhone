@@ -42,7 +42,7 @@ namespace MagicGameTracker.View
                 case ManaColor.Green:
                     returnBrush.Color = Color.FromArgb(255, 0, 255, 0);
                     break;
-                case ManaColor.None:
+                case ManaColor.Colorless:
                     returnBrush.Color = Color.FromArgb(255, 120, 120, 120);
                     break;
                 default:

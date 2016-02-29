@@ -82,6 +82,7 @@ namespace MagicGameTracker.Logic
                 }
             }
 
+            //TODO test and remove
             deckReport.mostCommonWinColor = GetMostCommonColor(colorsWonAgainst);
             deckReport.mostCommonLossColor = GetMostCommonColor(colorsLostAgainst);
 
@@ -124,6 +125,7 @@ namespace MagicGameTracker.Logic
                     1);
             }
 
+            //TODO test and remove
             playerReport.mostCommonWinColor = GetMostCommonColor(colorsWonAgainst);
             playerReport.mostCommonLossColor = GetMostCommonColor(colorsLostAgainst);
             playerReport.mostCommonPlayColor = GetMostCommonColor(colorsPlayed);
@@ -156,7 +158,7 @@ namespace MagicGameTracker.Logic
                 new SortableColor {color = ManaColor.Blue, number = 0},
                 new SortableColor {color = ManaColor.Green, number = 0},
                 new SortableColor {color = ManaColor.Devoid, number = 0},
-                new SortableColor {color = ManaColor.None, number = 0},
+                new SortableColor {color = ManaColor.Colorless, number = 0},
             };
 
             foreach (var str in colorStrings)
@@ -186,7 +188,7 @@ namespace MagicGameTracker.Logic
             }
             else
             {
-                return ManaColor.None;
+                return ManaColor.Colorless;
             }
         }
 
