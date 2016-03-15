@@ -3,8 +3,7 @@ using System.Windows.Controls;
 using MagicGameTracker.Logic.MagicEnums;  
 using MagicGameTracker.Logic.MagicEventArgs;  
 using System;  
-using System.Collections.Generic;  
-using System.Windows; 
+using System.Collections.Generic;
 
 namespace MagicGameTracker.Components
 {

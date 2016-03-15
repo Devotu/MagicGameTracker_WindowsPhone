@@ -35,7 +35,10 @@ namespace MagicGameTracker.Components
             cbRed.IsChecked = System.Int32.Parse(colors.Substring(2, 1)) == 1 ? true : false;
             cbBlue.IsChecked = System.Int32.Parse(colors.Substring(3, 1)) == 1 ? true : false;
             cbGreen.IsChecked = System.Int32.Parse(colors.Substring(4, 1)) == 1 ? true : false;
-            cbDevoid.IsChecked = System.Int32.Parse(colors.Substring(5, 1)) == 1 ? true : false;
+            if (colors.Length > 4)
+            {
+                cbDevoid.IsChecked = System.Int32.Parse(colors.Substring(5, 1)) == 1 ? true : false;
+            }
         }
 
         //HACK Inte så snyggt, men fugerar iaf
