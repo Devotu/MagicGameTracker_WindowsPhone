@@ -23,7 +23,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ads:AdControl Name="adcOpponentPage" Grid.Row="0" AdUnitId="11182065" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
+        <ads:AdControl Name="adOpponentPage" Grid.Row="0" AdUnitId="11593897" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
         
         <!--Pivot Control-->
         <controls:Pivot Title="{Binding Name}" Grid.Row="1">
