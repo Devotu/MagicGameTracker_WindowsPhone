@@ -58,5 +58,33 @@ namespace MagicGameTracker.View
                 tbTheme.Foreground = BrushHint;
             }
         }
+
+        public void Collapse(int reduction)
+        {
+            int left = reduction;
+            int labelReduction = 10;
+            this.lblName.Height = this.lblName.Height - labelReduction;
+            left = left - labelReduction;
+            this.lblTheme.Height = this.lblTheme.Height - labelReduction;
+            left = left - labelReduction;
+            this.ColorPicker.Collapse();
+            left = left - 72;
+            this.tbTheme.Height = this.tbTheme.Height -(left);
+            this.LayoutRoot.Height = this.LayoutRoot.Height - reduction;
+        }
+
+        public void Expand(int expansion)
+        {
+            int left = expansion;
+            this.LayoutRoot.Height = this.LayoutRoot.Height + expansion;
+            int labelExpansion = 10;
+            this.lblName.Height = this.lblName.Height + labelExpansion;
+            left = left - labelExpansion;
+            this.lblTheme.Height = this.lblTheme.Height + labelExpansion;
+            left = left - labelExpansion;
+            this.ColorPicker.Expand();
+            left = left - 72;
+            this.tbTheme.Height = this.tbTheme.Height + left;
+        }
     }
 }

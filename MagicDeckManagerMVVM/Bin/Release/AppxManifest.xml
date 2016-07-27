@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="25909Apparat.MagicGameTracker" Publisher="CN=097DB3E7-4AE4-43D3-8E89-E876763255DA" Version="4.2.0.8" ProcessorArchitecture="neutral" />
+  <Identity Name="25909Apparat.MagicGameTracker" Publisher="CN=097DB3E7-4AE4-43D3-8E89-E876763255DA" Version="4.3.1.2" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="38515c7a-f605-4ebf-8f12-5e105e930a86" PhonePublisherId="1249a267-793b-43bb-85de-fd631a719450" />
   <Properties>
     <DisplayName>MagicGameTracker</DisplayName>
@@ -48,7 +48,7 @@
     <build:Item Name="TargetFrameworkMoniker" Value="WindowsPhone,Version=v8.1" />
     <build:Item Name="VisualStudio" Version="12.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Express 2013 for Windows" />
-    <build:Item Name="OperatingSystem" Version="10.0.10240.16384 (th1.150709-1700)" />
+    <build:Item Name="OperatingSystem" Version="10.0.10586.0 (th2_release.151029-1700)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="12.0.40629.0" />
     <build:Item Name="ProjectGUID" Value="{D6A64CB3-F6A5-4D9D-BAAC-7E0451A33BF7}" />
     <build:Item Name="MakePri.exe" Version="6.3.9600.17336 (winblue.150226-1500)" />

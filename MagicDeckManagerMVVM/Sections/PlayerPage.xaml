@@ -23,7 +23,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ads:AdControl Name="adcPlayerPage" Grid.Row="0" AdUnitId="11182066" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
+        <ads:AdControl Name="adPlayerPage" Grid.Row="0" AdUnitId="11593896" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
 
         <!--Pivot Control-->
         <controls:Pivot Title="{StaticResource ApplicationName}" Grid.Row="1">

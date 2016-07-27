@@ -23,7 +23,7 @@
             </Grid.RenderTransform>
             <views:LifeCounterView x:Name="OpponentLifeCounterView" />
         </Grid>
-        <ads:AdControl Name="adcLifeTrackerView" Grid.Row="1" AdUnitId="11182064" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
+        <ads:AdControl Name="adLifeTrackerView" Grid.Row="1" AdUnitId="11593893" ApplicationId="9829ccb1-4671-47ac-adbc-7977951f679a" Height="80" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="480" IsAutoRefreshEnabled="True" IsAutoCollapseEnabled="True" />
         <views:LifeCounterView x:Name="PlayerLifeCounterView" Grid.Row="2" />
     </Grid>
 </UserControl>

@@ -3,8 +3,7 @@ using System.Windows.Controls;
 using MagicGameTracker.Logic.MagicEnums;  
 using MagicGameTracker.Logic.MagicEventArgs;  
 using System;  
-using System.Collections.Generic;  
-using System.Windows; 
+using System.Collections.Generic;
 
 namespace MagicGameTracker.Components
 {
@@ -51,5 +50,12 @@ namespace MagicGameTracker.Components
         }
 
         public event EventHandler<FormatEventArgs> SelectedFormatChange;
+
+        internal void PresetFormat(string format)
+        {
+            //HACK Fungerar ej av oklar anledning, löses med If på annat ställe tills vidare
+            this.lbFormatsToPick.SelectedItem = (ListBoxItem)this.lbFormatsToPick.FindName(format);
+            this.bShowFormats.Content = format;
+        }
     }
 }

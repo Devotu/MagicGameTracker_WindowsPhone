@@ -10,18 +10,23 @@
     d:DesignHeight="144" d:DesignWidth="400">
     
     <UserControl.Resources>
-        <Style x:Key="ManaColorCheckbox" TargetType="CheckBox">
+        <Style x:Key="ManaColorCheckboxTop" TargetType="CheckBox">
             <Setter Property="Height" Value="72"/>
             <Setter Property="Width" Value="72"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
+        <Style x:Key="ManaColorCheckboxBottom" TargetType="CheckBox">
+            <Setter Property="Height" Value="72"/>
+            <Setter Property="Width" Value="72"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
     </UserControl.Resources>
 
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="72"/>
-            <RowDefinition Height="72"/>
+            <RowDefinition Height="144"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="67"/>
@@ -31,12 +36,12 @@
             <ColumnDefinition Width="67"/>
             <ColumnDefinition Width="67"/>
         </Grid.ColumnDefinitions>
-        <CheckBox Grid.Column="0" Grid.Row="0" Name="cbBlack" Background="DarkGray" Style="{StaticResource ManaColorCheckbox}"/>
-        <CheckBox Grid.Column="1" Grid.Row="1" Name="cbWhite" Background="White" Style="{StaticResource ManaColorCheckbox}"/>
-        <CheckBox Grid.Column="2" Grid.Row="0" Name="cbRed" Background="Red" Style="{StaticResource ManaColorCheckbox}"/>
-        <CheckBox Grid.Column="3" Grid.Row="1" Name="cbBlue" Background="Blue" Style="{StaticResource ManaColorCheckbox}"/>
-        <CheckBox Grid.Column="4" Grid.Row="0" Name="cbGreen"  Background="Green" Style="{StaticResource ManaColorCheckbox}"/>
-        <CheckBox Grid.Column="5" Grid.Row="1" Name="cbDevoid"  Background="LightGray" Style="{StaticResource ManaColorCheckbox}"/>
+        <CheckBox Grid.Column="0" Grid.Row="0" Name="cbBlack" Background="DarkGray" Style="{StaticResource ManaColorCheckboxTop}"/>
+        <CheckBox Grid.Column="1" Grid.Row="0" Name="cbWhite" Background="White" Style="{StaticResource ManaColorCheckboxBottom}"/>
+        <CheckBox Grid.Column="2" Grid.Row="0" Name="cbRed" Background="Red" Style="{StaticResource ManaColorCheckboxTop}"/>
+        <CheckBox Grid.Column="3" Grid.Row="0" Name="cbBlue" Background="Blue" Style="{StaticResource ManaColorCheckboxBottom}"/>
+        <CheckBox Grid.Column="4" Grid.Row="0" Name="cbGreen"  Background="Green" Style="{StaticResource ManaColorCheckboxTop}"/>
+        <CheckBox Grid.Column="5" Grid.Row="0" Name="cbDevoid"  Background="LightGray" Style="{StaticResource ManaColorCheckboxBottom}"/>
     </Grid>
     
     
