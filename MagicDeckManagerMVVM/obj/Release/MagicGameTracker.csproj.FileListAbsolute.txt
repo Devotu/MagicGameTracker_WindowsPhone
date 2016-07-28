@@ -201,6 +201,7 @@ C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVV
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\sv-SE\Microsoft.Advertising.Mobile.resources.dll
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\zh-CN\Microsoft.Advertising.Mobile.resources.dll
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MagicGameTracker.csprojResolveAssemblyReference.cache
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\App.g.cs
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\Components\ColorPicker.g.cs
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\Components\ColorsUsedGraphSlim.g.cs
@@ -271,4 +272,4 @@ C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVV
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\ProjectArchitectures.txt
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MDILProjectFiles.xml
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\XapCacheFile.xml
-C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MagicGameTracker.csprojResolveAssemblyReference.cache
+C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\Components\EmailDatabase.g.cs

@@ -20,7 +20,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <TextBlock Height="30" HorizontalAlignment="Right" Margin="0,12,12,0" Name="tbVersion" Text="{Binding}" VerticalAlignment="Top" />
         <!--Pivot Control-->
-        <controls:Pivot x:Name="AboutPivot" Title="{StaticResource ApplicationName}">
+        <controls:Pivot x:Name="AboutPivot" Title="{StaticResource ApplicationName}" DoubleTap="AboutPivot_DoubleTap">
             <!--Pivot item 1-->
             <controls:PivotItem Header="About">
                 <Grid x:Name="AboutPanel" Grid.Row="1" Margin="12,0,12,0">

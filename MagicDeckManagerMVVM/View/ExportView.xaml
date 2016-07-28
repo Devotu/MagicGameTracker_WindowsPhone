@@ -10,6 +10,7 @@
     d:DesignHeight="480" d:DesignWidth="480">
 
     <Grid x:Name="LayoutcRoot" Background="Transparent">
-        <Button Content="Export data" Height="72" HorizontalAlignment="Center" Margin="0,45,0,0" Name="bExportData" VerticalAlignment="Top" Width="374" Click="bExportData_Click" />
+        <Button Content="Export data" Height="72" HorizontalAlignment="Center" Margin="0,117,0,0" Name="bExportData" VerticalAlignment="Top" Width="374" Click="bExportData_Click" />
+        <TextBox Name="tbEmail" HorizontalAlignment="Center" Height="72" Margin="0,45,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="374"/>
     </Grid>
 </UserControl>
