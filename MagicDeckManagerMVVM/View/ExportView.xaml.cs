@@ -28,6 +28,8 @@ namespace MagicGameTracker.View
 
         private void bExportData_Click(object sender, RoutedEventArgs e)
         {
+            #region CSV
+            /*
             //Prepare email
             var emailRecipient = this.tbEmail.Text;
             var mailString = "The database consists of four tables noted as csv. Convert into sqlite and rename as .mgt and transfer to phone\n";
@@ -134,6 +136,98 @@ namespace MagicGameTracker.View
             emailComposeTask.To = emailRecipient;
 
             emailComposeTask.Show();
+            */
+            #endregion
+
+            #region SQL script
+            //Prepare email
+            var emailRecipient = this.tbEmail.Text;
+            var mailString = "Run the following sql script in sqlite and save the resulting database as exportedDB.mgt and transfer to phone\n\n";
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+
+            //Prepare collections
+            _mvm = new MagicViewModel(App.DBCONNECTION);
+            _mvm.LoadAllCollectionsFromDatabase();
+
+            //Initiate script
+            mailString = mailString + "BEGIN TRANSACTION;" + "\n";
+            mailString = mailString + "CREATE TABLE android_metadata (locale TEXT);" + "\n";
+            mailString = mailString + "INSERT INTO `android_metadata` VALUES ('en_CA');" + "\n";
+ 
+            # region Email Alterations
+            mailString = mailString + "CREATE TABLE Alterations(Alteration_ID int PRIMARY KEY, Deck_Id int, Date String, Revision int, Comment String);" + "\n";
+
+            foreach (var alteration in _mvm.Alterations)
+            {
+                mailString = mailString + "INSERT INTO `Alterations` VALUES (" + 
+                    + alteration.AlterationId + ","
+                    + alteration._alterationDeckId + ","
+                    + convertDate(alteration.Date) + ","
+                    + alteration.Revision + ","
+                    + "'" + alteration.Comment + "'"
+                    + ");\n";
+            }
+            #endregion
+
+            # region Email Decks
+            mailString = mailString + "CREATE TABLE Decks(Deck_ID int PRIMARY KEY, Name String, Format Format, Colorset int, Theme String, Active int, DateCreated String);" + "\n";
+
+            foreach (var deck in _mvm.Decks)
+            {
+                mailString = mailString + "INSERT INTO `Decks` VALUES ("
+                    + deck.DeckId + ","
+                    + "'" + deck.Name + "',"
+                    + "'" + assureValidFormat(deck.Format) + "',"
+                    + "'" + convertColorToColorset(deck.Colors) + "',"
+                    + "'" + deck.Theme + "',"
+                    + convertBoolToInt(deck.Active) + ","
+                    + convertDate(deck.DateCreated)
+                    + ");\n";
+            }
+            #endregion
+
+            # region Email Games
+            mailString = mailString + "CREATE TABLE Games(Game_ID int PRIMARY KEY, Deck_Id int, Win int, Colorset String, Comment String,Date String, Opponent_Id int, PerformanceRating int);" + "\n";
+
+            foreach (var game in _mvm.Games)
+            {
+                mailString = mailString + "INSERT INTO `Games` VALUES ("
+                    + game.GameId + ","
+                    + game._gameDeckId + ","
+                    + convertBoolToInt(game.Win) + ","
+                    + "'" + convertColorToColorset(game.Colors) + "',"
+                    + "'" + game.Comment + "',"
+                    + convertDate(game.Date) + ","
+                    + game._gameOpponentId + ","
+                    + "round(" + game.PerformanceRating + ")"
+                    + ");\n";
+            }
+            #endregion
+
+            # region Email Opponents
+            mailString = mailString + "CREATE TABLE Opponents(Opponent_ID int PRIMARY KEY, Name String);" + "\n";
+
+            foreach (var opponent in _mvm.Opponents)
+            {
+                mailString = mailString + "INSERT INTO `Opponents` VALUES ("
+                    + opponent.OpponentId + ","
+                    + "'" + opponent.Name + "'"
+                    + ");\n";
+            }
+            #endregion
+
+            //End Script
+            mailString = mailString + "COMMIT;";
+
+            //Send email
+            emailComposeTask = new EmailComposeTask();
+
+            emailComposeTask.Subject = "Magic game tracker data";
+            emailComposeTask.Body = mailString;
+            emailComposeTask.To = emailRecipient;
+
+            emailComposeTask.Show();
+            #endregion
         }
 
         private String convertDate(DateTime dateIn)
@@ -142,8 +236,8 @@ namespace MagicGameTracker.View
                 dateIn.Year.ToString().Substring(2)
                 + (dateIn.Month.ToString().Length == 1 ? ("0" + dateIn.Month.ToString()) : dateIn.Month.ToString())
                 + (dateIn.Day.ToString().Length == 1 ? ("0" + dateIn.Day.ToString()) : dateIn.Day.ToString())
-                + dateIn.Hour
-                + dateIn.Minute;
+                + (dateIn.Hour.ToString().Length == 1 ? ("0" + dateIn.Hour.ToString()) : dateIn.Hour.ToString())
+                + (dateIn.Minute.ToString().Length == 1 ? ("0" + dateIn.Minute.ToString()) : dateIn.Minute.ToString());
             return convertedDate;
         }
 
@@ -154,7 +248,9 @@ namespace MagicGameTracker.View
             {
                 if (colorsIn[i].ToString() == "1")
                 {
-                    convertedColorset = convertedColorset + "," + (MagicGameTracker.Logic.MagicEnums.ManaColor)i;
+                    string color = ((MagicGameTracker.Logic.MagicEnums.ManaColor)i).ToString();
+                    color = color.ToUpper();
+                    convertedColorset = convertedColorset + "," + color;
                 }
             }
             return convertedColorset;
@@ -169,6 +265,18 @@ namespace MagicGameTracker.View
             else
             {
                 return 0;
+            }
+        }
+
+        private String assureValidFormat(String formatIn)
+        {
+            if (formatIn == "Statistical collection")
+            {
+                return "Collection";
+            }
+            else
+            {
+                return formatIn;
             }
         }
     }
