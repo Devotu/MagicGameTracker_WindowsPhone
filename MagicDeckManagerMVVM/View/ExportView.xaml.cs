@@ -161,7 +161,7 @@ namespace MagicGameTracker.View
             {
                 mailString = mailString + "INSERT INTO `Alterations` VALUES (" + 
                     + alteration.AlterationId + ","
-                    + alteration._alterationDeckId + ","
+                    + adjustAutoIndex(alteration._alterationDeckId) + ","
                     + convertDate(alteration.Date) + ","
                     + alteration.Revision + ","
                     + "'" + alteration.Comment + "'"
@@ -175,7 +175,7 @@ namespace MagicGameTracker.View
             foreach (var deck in _mvm.Decks)
             {
                 mailString = mailString + "INSERT INTO `Decks` VALUES ("
-                    + deck.DeckId + ","
+                    + adjustAutoIndex(deck.DeckId) + ","
                     + "'" + deck.Name + "',"
                     + "'" + assureValidFormat(deck.Format) + "',"
                     + "'" + convertColorToColorset(deck.Colors) + "',"
@@ -193,12 +193,12 @@ namespace MagicGameTracker.View
             {
                 mailString = mailString + "INSERT INTO `Games` VALUES ("
                     + game.GameId + ","
-                    + game._gameDeckId + ","
+                    + adjustAutoIndex(game._gameDeckId) + ","
                     + convertBoolToInt(game.Win) + ","
                     + "'" + convertColorToColorset(game.Colors) + "',"
                     + "'" + game.Comment + "',"
                     + convertDate(game.Date) + ","
-                    + game._gameOpponentId + ","
+                    + adjustAutoIndex(game._gameOpponentId) + ","
                     + "round(" + game.PerformanceRating + ")"
                     + ");\n";
             }
@@ -210,7 +210,7 @@ namespace MagicGameTracker.View
             foreach (var opponent in _mvm.Opponents)
             {
                 mailString = mailString + "INSERT INTO `Opponents` VALUES ("
-                    + opponent.OpponentId + ","
+                    + adjustAutoIndex(opponent.OpponentId) + ","
                     + "'" + opponent.Name + "'"
                     + ");\n";
             }
@@ -278,6 +278,11 @@ namespace MagicGameTracker.View
             {
                 return formatIn;
             }
+        }
+
+        private int adjustAutoIndex(int deckIdIn)
+        {
+            return deckIdIn - 1;
         }
     }
 }
