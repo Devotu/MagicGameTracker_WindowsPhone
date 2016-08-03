@@ -30,3 +30,10 @@ Mindre men alvarlig bugg fixad gällande alteration gällande lekar skapade innan 
 Updaterade Ads
 4.3.1.4
 Dold funktion för export av data till sql script finns
+4.4.0.0
+Data export
+4.4.1.0
+Data export både som CSV och SQL script
+Länk från Main
+Uppdaterad Help
+Uppdaterad Inforuta

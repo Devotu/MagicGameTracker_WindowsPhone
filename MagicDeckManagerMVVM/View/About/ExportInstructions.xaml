@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MagicGameTracker.View.About.ExportInstructions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbAboutText0" Grid.Row="0" Text="Export data" Style="{StaticResource SectionDescriptionText}"/>
+        <TextBlock Name="tbAboutText3" Grid.Row="1" Text="Data can be exported by email in two formats; CSV and SQL script." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText4" Grid.Row="2" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText5" Grid.Row="3" Text="CSV" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText6" Grid.Row="4" Text="This is a plain text format that can be imported into programs such as Excel and Open Office Calc, which is an open source alternative." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText7" Grid.Row="5" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText8" Grid.Row="6" Text="SQL script" Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText9" Grid.Row="7" Text="The SQL script is a plain text instruction for your sql program to import the data." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText10" Grid.Row="8" Text="The script is constructed to work in SQLite but will probably work in other sql formats as well." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText11" Grid.Row="9" Text="For a simple and free SQLite editor and viewer try SQLiteBrowser (sqlitebrowser.org)." Style="{StaticResource AboutText}"/>
+        <TextBlock Name="tbAboutText12" Grid.Row="10" Text=" " Style="{StaticResource TextBrake}"/>
+        <TextBlock Name="tbAboutText13" Grid.Row="11" Text=" " Style="{StaticResource TextBrake}"/>
+    </Grid>
+</UserControl>
