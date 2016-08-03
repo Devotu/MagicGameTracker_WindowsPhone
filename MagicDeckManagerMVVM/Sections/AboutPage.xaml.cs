@@ -30,5 +30,10 @@ namespace MagicGameTracker.Sections
 
             this.tbVersion.DataContext = versionFetcher.getAppVersion();
         }
+
+        private void AboutPivot_DoubleTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Sections/ExportPage.xaml", UriKind.Relative));
+        }
     }
 }
