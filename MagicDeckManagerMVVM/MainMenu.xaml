@@ -31,9 +31,9 @@
             <Button Content="Decks" Height="72" HorizontalAlignment="Center" Margin="0,45,0,0" Name="bGoToDeckList" VerticalAlignment="Top" Width="374" Click="bGoToDeckList_Click" />
             <Button Content="Statistics" Height="72" HorizontalAlignment="Center" Margin="0,123,0,0" Name="bGoToPlayerStatistics" VerticalAlignment="Top" Width="374" Click="bGoToPlayerStatistics_Click" />
             <Button Content="Opponents" Height="72" HorizontalAlignment="Center" Margin="0,201,0,0" Name="bGoToOpponents" VerticalAlignment="Top" Width="374" Click="bGoToOpponents_Click" />
-            <!--<Button Content="Export/Import" Height="72" HorizontalAlignment="Center" Margin="0,279,0,0" Name="bGoToExport" VerticalAlignment="Top" Width="374" Click="bGoToExport_Click" />-->
-            <TextBlock Name="tbChangesTitle" Height="30" HorizontalAlignment="Center" Margin="30,110,30,0" Width="320" TextAlignment="Center" Text="Recent changes" TextWrapping="Wrap" Foreground="Khaki"/>
-            <TextBlock Name="tbChanges" Height="100" HorizontalAlignment="Center" Margin="30,240,30,0" Width="320" TextAlignment="Center" Text="Limited export to Android available. More information in Help/About." TextWrapping="Wrap" Foreground="DarkKhaki"/>
+            <Button Content="Export/Import" Height="72" HorizontalAlignment="Center" Margin="0,279,0,0" Name="bGoToExport" VerticalAlignment="Top" Width="374" Click="bGoToExport_Click" />
+            <TextBlock Name="tbChangesTitle" Height="30" HorizontalAlignment="Center" Margin="30,150,30,0" Width="320" TextAlignment="Center" Text="Recent changes" TextWrapping="Wrap" Foreground="Khaki"/>
+            <TextBlock Name="tbChanges" Height="100" HorizontalAlignment="Center" Margin="30,280,30,0" Width="320" TextAlignment="Center" Text="Data export now available. More information in Help/About." TextWrapping="Wrap" Foreground="DarkKhaki"/>
             <Button Content="Help/About" Height="72" HorizontalAlignment="Center" Margin="0,0,0,45" Name="bAbout" VerticalAlignment="Bottom" Width="374" Click="bAbout_Click" />
         </Grid>
     </Grid>

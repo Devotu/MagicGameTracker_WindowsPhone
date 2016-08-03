@@ -10,7 +10,16 @@
     d:DesignHeight="480" d:DesignWidth="480">
 
     <Grid x:Name="LayoutcRoot" Background="Transparent">
-        <Button Content="Export data" Height="72" HorizontalAlignment="Center" Margin="0,117,0,0" Name="bExportData" VerticalAlignment="Top" Width="374" Click="bExportData_Click" />
-        <TextBox Name="tbEmail" HorizontalAlignment="Center" Height="72" Margin="0,45,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="374"/>
+        <Grid Grid.Row="4" Width="374">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Name="lblCSVSQL" Grid.Row="0" Height="25" HorizontalAlignment="Left" Margin="0,45,0,0" Text="CSV / SQL" VerticalAlignment="Top" Width="Auto" FontWeight="Bold"/>
+            <RadioButton Name="rbCSV" Grid.Row="1" Content="CSV" GroupName="gCSVSQL" Height="72" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" IsChecked="true" />
+            <RadioButton Name="rbSQL" Grid.Row="1" Content="SQL" GroupName="gCSVSQL" Height="72" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" />
+        </Grid>
+        <TextBox Name="tbEmail" HorizontalAlignment="Center" Height="72" Margin="0,125,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="374" GotFocus="tbEmail_GotFocus" LostFocus="tbEmail_LostFocus"/>
+        <Button  Name="bExportData" Content="Export data" Height="72" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Width="374" Click="bExportData_Click" />
     </Grid>
 </UserControl>
