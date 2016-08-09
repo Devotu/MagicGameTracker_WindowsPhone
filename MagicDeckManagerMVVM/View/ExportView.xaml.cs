@@ -52,264 +52,320 @@ namespace MagicGameTracker.View
 
         private void bExportData_Click(object sender, RoutedEventArgs e)
         {
+            var csvOrSql = "SQL";
+
+            //Prepare collections
+            try
+            {
+                _mvm = new MagicViewModel(App.DBCONNECTION);
+                _mvm.LoadAllCollectionsFromDatabase();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occured trying to load collections from the database.");
+            }
+
+            var mailString = "No data gathered.";
+
             if (rbCSV.IsChecked == true)
             {
                 #region CSV
                 //Prepare email
-                var emailRecipient = this.tbEmail.Text;
-                var mailString = "The database consists of four tables noted as csv. Convert into sqlite and rename as .mgt and transfer to phone\n";
-                EmailComposeTask emailComposeTask = new EmailComposeTask();
-
-                //Prepare collections
-                _mvm = new MagicViewModel(App.DBCONNECTION);
-                _mvm.LoadAllCollectionsFromDatabase();
-
-                # region Email Alterations
-                mailString = mailString + "\nAlterations\n";
-                mailString = mailString
-                        + "Alteration_ID;"
-                        + "Deck_Id;"
-                        + "Date;"
-                        + "Revision;"
-                        + "Comment"
-                        + "\n";
-
-                foreach (var alteration in _mvm.Alterations)
+                try
                 {
+                    mailString = "The database consists of four tables noted as csv. Convert into sqlite and rename as .mgt and transfer to phone\n";
+
+                    # region Email Alterations
+                    mailString = mailString + "\nAlterations\n";
                     mailString = mailString
-                        + alteration.AlterationId + ";"
-                        + adjustAutoIndex(alteration._alterationDeckId) + ";"
-                        + convertDate(alteration.Date) + ";"
-                        + alteration.Revision + ";"
-                        + alteration.Comment
-                        + "\n";
+                            + "Alteration_ID;"
+                            + "Deck_Id;"
+                            + "Date;"
+                            + "Revision;"
+                            + "Comment"
+                            + "\n";
+
+                    foreach (var alteration in _mvm.Alterations)
+                    {
+                        mailString = mailString
+                            + alteration.AlterationId + ";"
+                            + adjustAutoIndex(alteration._alterationDeckId) + ";"
+                            + convertDate(alteration.Date) + ";"
+                            + alteration.Revision + ";"
+                            + alteration.Comment
+                            + "\n";
+                    }
+                    #endregion
+
+                    # region Email Decks
+                    mailString = mailString + "\nDecks\n"
+                            + "Deck_ID;"
+                            + "Name;"
+                            + "Format;"
+                            + "Colorset;"
+                            + "Theme;"
+                            + "Active;"
+                            + "DateCreated"
+                            + "\n";
+
+                    foreach (var deck in _mvm.Decks)
+                    {
+                        mailString = mailString
+                            + adjustAutoIndex(deck.DeckId) + ";"
+                            + deck.Name + ";"
+                            + assureValidFormat(deck.Format) + ";"
+                            + convertColorToColorset(deck.Colors) + ";"
+                            + deck.Theme + ";"
+                            + convertBoolToInt(deck.Active) + ";"
+                            + convertDate(deck.DateCreated)
+                            + "\n";
+                    }
+                    #endregion
+
+                    # region Email Games
+                    mailString = mailString + "\nGames\n"
+                            + "Game_ID;"
+                            + "Deck_Id;"
+                            + "Win;"
+                            + "Colorset;"
+                            + "Comment;"
+                            + "Date;"
+                            + "Opponent_Id;"
+                            + "PerformanceRating"
+                            + "\n";
+
+                    foreach (var game in _mvm.Games)
+                    {
+                        mailString = mailString
+                            + game.GameId + ";"
+                            + adjustAutoIndex(game._gameDeckId) + ";"
+                            + convertBoolToInt(game.Win) + ";"
+                            + convertColorToColorset(game.Colors) + ";"
+                            + game.Comment + ";"
+                            + convertDate(game.Date) + ";"
+                            + game._gameOpponentId + ";"
+                            + game.PerformanceRating
+                            + "\n";
+                    }
+                    #endregion
+
+                    # region Email Opponents
+                    mailString = mailString + "\nOpponents\n"
+                            + "Opponent_ID;"
+                            + "Name"
+                            + "\n";
+
+                    foreach (var opponent in _mvm.Opponents)
+                    {
+                        mailString = mailString
+                            + adjustAutoIndex(opponent.OpponentId) + ";"
+                            + opponent.Name
+                            + "\n";
+                    }
+                    #endregion
                 }
-                #endregion
-
-                # region Email Decks
-                mailString = mailString + "\nDecks\n"
-                        + "Deck_ID;"
-                        + "Name;"
-                        + "Format;"
-                        + "Colorset;"
-                        + "Theme;"
-                        + "Active;"
-                        + "DateCreated"
-                        + "\n";
-
-                foreach (var deck in _mvm.Decks)
+                catch (Exception ex)
                 {
-                    mailString = mailString
-                        + adjustAutoIndex(deck.DeckId) + ";"
-                        + deck.Name + ";"
-                        + assureValidFormat(deck.Format) + ";"
-                        + convertColorToColorset(deck.Colors) + ";"
-                        + deck.Theme + ";"
-                        + convertBoolToInt(deck.Active) + ";"
-                        + convertDate(deck.DateCreated)
-                        + "\n";
+                    MessageBox.Show("An error occured trying to convert data into a valid format. Error msg: " + ex.Message);
                 }
-                #endregion
 
-                # region Email Games
-                mailString = mailString + "\nGames\n"
-                        + "Game_ID;"
-                        + "Deck_Id;"
-                        + "Win;"
-                        + "Colorset;"
-                        + "Comment;"
-                        + "Date;"
-                        + "Opponent_Id;"
-                        + "PerformanceRating"
-                        + "\n";
-
-                foreach (var game in _mvm.Games)
-                {
-                    mailString = mailString
-                        + game.GameId + ";"
-                        + adjustAutoIndex(game._gameDeckId) + ";"
-                        + convertBoolToInt(game.Win) + ";"
-                        + convertColorToColorset(game.Colors) + ";"
-                        + game.Comment + ";"
-                        + convertDate(game.Date) + ";"
-                        + game._gameOpponentId + ";"
-                        + game.PerformanceRating
-                        + "\n";
-                }
-                #endregion
-
-                # region Email Opponents
-                mailString = mailString + "\nOpponents\n"
-                        + "Opponent_ID;"
-                        + "Name"
-                        + "\n";
-
-                foreach (var opponent in _mvm.Opponents)
-                {
-                    mailString = mailString
-                        + adjustAutoIndex(opponent.OpponentId) + ";"
-                        + opponent.Name
-                        + "\n";
-                }
-                #endregion
-
-                //Send email
-                emailComposeTask = new EmailComposeTask();
-
-                emailComposeTask.Subject = "Magic game tracker CSV data";
-                emailComposeTask.Body = mailString;
-                emailComposeTask.To = emailRecipient;
-
-                emailComposeTask.Show();
                 #endregion
             }
             else
             {
                 #region SQL script
-                //Prepare email
-                var emailRecipient = this.tbEmail.Text;
-                var mailString = "Run the following sql script in sqlite and save the resulting database as exportedDB.mgt and transfer to phone\n\n";
+                try
+                {
+                    //Initiate script
+                    mailString = "Run the following sql script in sqlite and save the resulting database as exportedDB.mgt and transfer to phone\n\n";
+                    mailString = mailString + "BEGIN TRANSACTION;" + "\n";
+                    mailString = mailString + "CREATE TABLE android_metadata (locale TEXT);" + "\n";
+                    mailString = mailString + "INSERT INTO `android_metadata` VALUES ('en_CA');" + "\n";
+
+                    # region Email Alterations
+                    mailString = mailString + "CREATE TABLE Alterations(Alteration_ID int PRIMARY KEY, Deck_Id int, Date String, Revision int, Comment String);" + "\n";
+
+                    foreach (var alteration in _mvm.Alterations)
+                    {
+                        mailString = mailString + "INSERT INTO `Alterations` VALUES (" +
+                            +alteration.AlterationId + ","
+                            + adjustAutoIndex(alteration._alterationDeckId) + ","
+                            + convertDate(alteration.Date) + ","
+                            + alteration.Revision + ","
+                            + "'" + alteration.Comment + "'"
+                            + ");\n";
+                    }
+                    #endregion
+
+                    # region Email Decks
+                    mailString = mailString + "CREATE TABLE Decks(Deck_ID int PRIMARY KEY, Name String, Format Format, Colorset int, Theme String, Active int, DateCreated String);" + "\n";
+
+                    foreach (var deck in _mvm.Decks)
+                    {
+                        mailString = mailString + "INSERT INTO `Decks` VALUES ("
+                            + adjustAutoIndex(deck.DeckId) + ","
+                            + "'" + deck.Name + "',"
+                            + "'" + assureValidFormat(deck.Format) + "',"
+                            + "'" + convertColorToColorset(deck.Colors) + "',"
+                            + "'" + deck.Theme + "',"
+                            + convertBoolToInt(deck.Active) + ","
+                            + convertDate(deck.DateCreated)
+                            + ");\n";
+                    }
+                    #endregion
+
+                    # region Email Games
+                    mailString = mailString + "CREATE TABLE Games(Game_ID int PRIMARY KEY, Deck_Id int, Win int, Colorset String, Comment String,Date String, Opponent_Id int, PerformanceRating int);" + "\n";
+
+                    foreach (var game in _mvm.Games)
+                    {
+                        mailString = mailString + "INSERT INTO `Games` VALUES ("
+                            + game.GameId + ","
+                            + adjustAutoIndex(game._gameDeckId) + ","
+                            + convertBoolToInt(game.Win) + ","
+                            + "'" + convertColorToColorset(game.Colors) + "',"
+                            + "'" + game.Comment + "',"
+                            + convertDate(game.Date) + ","
+                            + adjustAutoIndex(game._gameOpponentId) + ","
+                            + "round(" + game.PerformanceRating + ")"
+                            + ");\n";
+                    }
+                    #endregion
+
+                    # region Email Opponents
+                    mailString = mailString + "CREATE TABLE Opponents(Opponent_ID int PRIMARY KEY, Name String);" + "\n";
+
+                    foreach (var opponent in _mvm.Opponents)
+                    {
+                        mailString = mailString + "INSERT INTO `Opponents` VALUES ("
+                            + adjustAutoIndex(opponent.OpponentId) + ","
+                            + "'" + opponent.Name + "'"
+                            + ");\n";
+                    }
+                    #endregion
+
+                    //End Script
+                    mailString = mailString + "COMMIT;";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured trying to convert data into a valid format. Error msg: " + ex.Message);
+                }                
+                #endregion
+            }
+
+            //Send email
+            try
+            {
                 EmailComposeTask emailComposeTask = new EmailComposeTask();
 
-                //Prepare collections
-                _mvm = new MagicViewModel(App.DBCONNECTION);
-                _mvm.LoadAllCollectionsFromDatabase();
-
-                //Initiate script
-                mailString = mailString + "BEGIN TRANSACTION;" + "\n";
-                mailString = mailString + "CREATE TABLE android_metadata (locale TEXT);" + "\n";
-                mailString = mailString + "INSERT INTO `android_metadata` VALUES ('en_CA');" + "\n";
-
-                # region Email Alterations
-                mailString = mailString + "CREATE TABLE Alterations(Alteration_ID int PRIMARY KEY, Deck_Id int, Date String, Revision int, Comment String);" + "\n";
-
-                foreach (var alteration in _mvm.Alterations)
-                {
-                    mailString = mailString + "INSERT INTO `Alterations` VALUES (" +
-                        +alteration.AlterationId + ","
-                        + adjustAutoIndex(alteration._alterationDeckId) + ","
-                        + convertDate(alteration.Date) + ","
-                        + alteration.Revision + ","
-                        + "'" + alteration.Comment + "'"
-                        + ");\n";
-                }
-                #endregion
-
-                # region Email Decks
-                mailString = mailString + "CREATE TABLE Decks(Deck_ID int PRIMARY KEY, Name String, Format Format, Colorset int, Theme String, Active int, DateCreated String);" + "\n";
-
-                foreach (var deck in _mvm.Decks)
-                {
-                    mailString = mailString + "INSERT INTO `Decks` VALUES ("
-                        + adjustAutoIndex(deck.DeckId) + ","
-                        + "'" + deck.Name + "',"
-                        + "'" + assureValidFormat(deck.Format) + "',"
-                        + "'" + convertColorToColorset(deck.Colors) + "',"
-                        + "'" + deck.Theme + "',"
-                        + convertBoolToInt(deck.Active) + ","
-                        + convertDate(deck.DateCreated)
-                        + ");\n";
-                }
-                #endregion
-
-                # region Email Games
-                mailString = mailString + "CREATE TABLE Games(Game_ID int PRIMARY KEY, Deck_Id int, Win int, Colorset String, Comment String,Date String, Opponent_Id int, PerformanceRating int);" + "\n";
-
-                foreach (var game in _mvm.Games)
-                {
-                    mailString = mailString + "INSERT INTO `Games` VALUES ("
-                        + game.GameId + ","
-                        + adjustAutoIndex(game._gameDeckId) + ","
-                        + convertBoolToInt(game.Win) + ","
-                        + "'" + convertColorToColorset(game.Colors) + "',"
-                        + "'" + game.Comment + "',"
-                        + convertDate(game.Date) + ","
-                        + adjustAutoIndex(game._gameOpponentId) + ","
-                        + "round(" + game.PerformanceRating + ")"
-                        + ");\n";
-                }
-                #endregion
-
-                # region Email Opponents
-                mailString = mailString + "CREATE TABLE Opponents(Opponent_ID int PRIMARY KEY, Name String);" + "\n";
-
-                foreach (var opponent in _mvm.Opponents)
-                {
-                    mailString = mailString + "INSERT INTO `Opponents` VALUES ("
-                        + adjustAutoIndex(opponent.OpponentId) + ","
-                        + "'" + opponent.Name + "'"
-                        + ");\n";
-                }
-                #endregion
-
-                //End Script
-                mailString = mailString + "COMMIT;";
-
-                //Send email
-                emailComposeTask = new EmailComposeTask();
-
-                emailComposeTask.Subject = "Magic game tracker SQL data";
+                emailComposeTask.Subject = "Magic game tracker " + csvOrSql + " data";
                 emailComposeTask.Body = mailString;
-                emailComposeTask.To = emailRecipient;
+                emailComposeTask.To = this.tbEmail.Text;
 
                 emailComposeTask.Show();
-                #endregion
-            }            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occured trying to send the email.");
+            }
         }
 
         private String convertDate(DateTime dateIn)
         {
-            var convertedDate =
-                dateIn.Year.ToString().Substring(2)
-                + (dateIn.Month.ToString().Length == 1 ? ("0" + dateIn.Month.ToString()) : dateIn.Month.ToString())
-                + (dateIn.Day.ToString().Length == 1 ? ("0" + dateIn.Day.ToString()) : dateIn.Day.ToString())
-                + (dateIn.Hour.ToString().Length == 1 ? ("0" + dateIn.Hour.ToString()) : dateIn.Hour.ToString())
-                + (dateIn.Minute.ToString().Length == 1 ? ("0" + dateIn.Minute.ToString()) : dateIn.Minute.ToString());
-            return convertedDate;
+
+            try
+            {
+                var convertedDate =
+                        dateIn.Year.ToString().Substring(2)
+                        + (dateIn.Month.ToString().Length == 1 ? ("0" + dateIn.Month.ToString()) : dateIn.Month.ToString())
+                        + (dateIn.Day.ToString().Length == 1 ? ("0" + dateIn.Day.ToString()) : dateIn.Day.ToString())
+                        + (dateIn.Hour.ToString().Length == 1 ? ("0" + dateIn.Hour.ToString()) : dateIn.Hour.ToString())
+                        + (dateIn.Minute.ToString().Length == 1 ? ("0" + dateIn.Minute.ToString()) : dateIn.Minute.ToString());
+                return convertedDate;
+            }
+            catch (Exception)
+            {
+                
+                throw new System.Exception("An error occured trying to convert date information");
+            }
         }
 
         private String convertColorToColorset(String colorsIn)
         {
-            var convertedColorset = "";
-            for (int i = 0; i < colorsIn.Length; i++)
+            try
             {
-                if (colorsIn[i].ToString() == "1")
+                var convertedColorset = "";
+                for (int i = 0; i < colorsIn.Length; i++)
                 {
-                    string color = ((MagicGameTracker.Logic.MagicEnums.ManaColor)i).ToString();
-                    color = color.ToUpper();
-                    convertedColorset = convertedColorset + "," + color;
+                    if (colorsIn[i].ToString() == "1")
+                    {
+                        string color = ((MagicGameTracker.Logic.MagicEnums.ManaColor)i).ToString();
+                        color = color.ToUpper();
+                        convertedColorset = convertedColorset + "," + color;
+                    }
                 }
+                return convertedColorset;
             }
-            return convertedColorset;
+            catch (Exception)
+            {
+                
+                throw new System.Exception("An error occured trying to convert color information");
+            }
+            
         }
 
         private int convertBoolToInt(Boolean boolIn)
         {
-            if (boolIn)
+            try
             {
-                return 1;
+                if (boolIn)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
-            else
+            catch (Exception)
             {
-                return 0;
+
+                throw new System.Exception("An error occured trying to convert Boolean information");
             }
         }
 
         private String assureValidFormat(String formatIn)
         {
-            if (formatIn == "Statistical collection")
+            try
             {
-                return "Collection";
+                if (formatIn == "Statistical collection")
+                {
+                    return "Collection";
+                }
+                else
+                {
+                    return formatIn;
+                }
             }
-            else
+            catch (Exception)
             {
-                return formatIn;
+
+                throw new System.Exception("An error occured trying to assure the Format");
             }
         }
 
         private int adjustAutoIndex(int deckIdIn)
         {
-            return deckIdIn - 1;
+            try
+            {
+                return deckIdIn - 1;
+            }
+            catch (Exception)
+            {
+
+                throw new System.Exception("An error occured trying to adjust the AutoIndex");
+            }
         }
     }
 }
