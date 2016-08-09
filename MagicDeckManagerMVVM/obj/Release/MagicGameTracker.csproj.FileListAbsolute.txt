@@ -272,3 +272,4 @@ C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVV
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\ProjectArchitectures.txt
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MDILProjectFiles.xml
 C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\XapCacheFile.xml
+C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MagicGameTracker.csprojResolveAssemblyReference.cache
