@@ -49,8 +49,7 @@ namespace MagicGameTracker.View
             }
         }
 
-
-        private void bExportData_Click(object sender, RoutedEventArgs e)
+        private void bConvertData_Click(object sender, RoutedEventArgs e)
         {
             var csvOrSql = "SQL";
 
@@ -65,7 +64,7 @@ namespace MagicGameTracker.View
                 MessageBox.Show("An error occured trying to load collections from the database.");
             }
 
-            var mailString = "No data gathered.";
+            this.tbConvertedData.Text = "No data gathered.";
 
             if (rbCSV.IsChecked == true)
             {
@@ -73,11 +72,11 @@ namespace MagicGameTracker.View
                 //Prepare email
                 try
                 {
-                    mailString = "The database consists of four tables noted as csv. Convert into sqlite and rename as .mgt and transfer to phone\n";
+                    this.tbConvertedData.Text = "The database consists of four tables noted as csv. Convert into sqlite and rename as .mgt and transfer to phone\n";
 
                     # region Email Alterations
-                    mailString = mailString + "\nAlterations\n";
-                    mailString = mailString
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "\nAlterations\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text
                             + "Alteration_ID;"
                             + "Deck_Id;"
                             + "Date;"
@@ -87,7 +86,7 @@ namespace MagicGameTracker.View
 
                     foreach (var alteration in _mvm.Alterations)
                     {
-                        mailString = mailString
+                        this.tbConvertedData.Text = this.tbConvertedData.Text
                             + alteration.AlterationId + ";"
                             + adjustAutoIndex(alteration._alterationDeckId) + ";"
                             + convertDate(alteration.Date) + ";"
@@ -98,7 +97,7 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Decks
-                    mailString = mailString + "\nDecks\n"
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "\nDecks\n"
                             + "Deck_ID;"
                             + "Name;"
                             + "Format;"
@@ -110,7 +109,7 @@ namespace MagicGameTracker.View
 
                     foreach (var deck in _mvm.Decks)
                     {
-                        mailString = mailString
+                        this.tbConvertedData.Text = this.tbConvertedData.Text
                             + adjustAutoIndex(deck.DeckId) + ";"
                             + deck.Name + ";"
                             + assureValidFormat(deck.Format) + ";"
@@ -123,7 +122,7 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Games
-                    mailString = mailString + "\nGames\n"
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "\nGames\n"
                             + "Game_ID;"
                             + "Deck_Id;"
                             + "Win;"
@@ -136,7 +135,7 @@ namespace MagicGameTracker.View
 
                     foreach (var game in _mvm.Games)
                     {
-                        mailString = mailString
+                        this.tbConvertedData.Text = this.tbConvertedData.Text
                             + game.GameId + ";"
                             + adjustAutoIndex(game._gameDeckId) + ";"
                             + convertBoolToInt(game.Win) + ";"
@@ -150,14 +149,14 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Opponents
-                    mailString = mailString + "\nOpponents\n"
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "\nOpponents\n"
                             + "Opponent_ID;"
                             + "Name"
                             + "\n";
 
                     foreach (var opponent in _mvm.Opponents)
                     {
-                        mailString = mailString
+                        this.tbConvertedData.Text = this.tbConvertedData.Text
                             + adjustAutoIndex(opponent.OpponentId) + ";"
                             + opponent.Name
                             + "\n";
@@ -177,17 +176,17 @@ namespace MagicGameTracker.View
                 try
                 {
                     //Initiate script
-                    mailString = "Run the following sql script in sqlite and save the resulting database as exportedDB.mgt and transfer to phone\n\n";
-                    mailString = mailString + "BEGIN TRANSACTION;" + "\n";
-                    mailString = mailString + "CREATE TABLE android_metadata (locale TEXT);" + "\n";
-                    mailString = mailString + "INSERT INTO `android_metadata` VALUES ('en_CA');" + "\n";
+                    this.tbConvertedData.Text = "Run the following sql script in sqlite and save the resulting database as exportedDB.mgt and transfer to phone\n\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "BEGIN TRANSACTION;" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "CREATE TABLE android_metadata (locale TEXT);" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "INSERT INTO `android_metadata` VALUES ('en_CA');" + "\n";
 
                     # region Email Alterations
-                    mailString = mailString + "CREATE TABLE Alterations(Alteration_ID int PRIMARY KEY, Deck_Id int, Date String, Revision int, Comment String);" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "CREATE TABLE Alterations(Alteration_ID int PRIMARY KEY, Deck_Id int, Date String, Revision int, Comment String);" + "\n";
 
                     foreach (var alteration in _mvm.Alterations)
                     {
-                        mailString = mailString + "INSERT INTO `Alterations` VALUES (" +
+                        this.tbConvertedData.Text = this.tbConvertedData.Text + "INSERT INTO `Alterations` VALUES (" +
                             +alteration.AlterationId + ","
                             + adjustAutoIndex(alteration._alterationDeckId) + ","
                             + convertDate(alteration.Date) + ","
@@ -198,11 +197,11 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Decks
-                    mailString = mailString + "CREATE TABLE Decks(Deck_ID int PRIMARY KEY, Name String, Format Format, Colorset int, Theme String, Active int, DateCreated String);" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "CREATE TABLE Decks(Deck_ID int PRIMARY KEY, Name String, Format Format, Colorset int, Theme String, Active int, DateCreated String);" + "\n";
 
                     foreach (var deck in _mvm.Decks)
                     {
-                        mailString = mailString + "INSERT INTO `Decks` VALUES ("
+                        this.tbConvertedData.Text = this.tbConvertedData.Text + "INSERT INTO `Decks` VALUES ("
                             + adjustAutoIndex(deck.DeckId) + ","
                             + "'" + deck.Name + "',"
                             + "'" + assureValidFormat(deck.Format) + "',"
@@ -215,11 +214,11 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Games
-                    mailString = mailString + "CREATE TABLE Games(Game_ID int PRIMARY KEY, Deck_Id int, Win int, Colorset String, Comment String,Date String, Opponent_Id int, PerformanceRating int);" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "CREATE TABLE Games(Game_ID int PRIMARY KEY, Deck_Id int, Win int, Colorset String, Comment String,Date String, Opponent_Id int, PerformanceRating int);" + "\n";
 
                     foreach (var game in _mvm.Games)
                     {
-                        mailString = mailString + "INSERT INTO `Games` VALUES ("
+                        this.tbConvertedData.Text = this.tbConvertedData.Text + "INSERT INTO `Games` VALUES ("
                             + game.GameId + ","
                             + adjustAutoIndex(game._gameDeckId) + ","
                             + convertBoolToInt(game.Win) + ","
@@ -233,11 +232,11 @@ namespace MagicGameTracker.View
                     #endregion
 
                     # region Email Opponents
-                    mailString = mailString + "CREATE TABLE Opponents(Opponent_ID int PRIMARY KEY, Name String);" + "\n";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "CREATE TABLE Opponents(Opponent_ID int PRIMARY KEY, Name String);" + "\n";
 
                     foreach (var opponent in _mvm.Opponents)
                     {
-                        mailString = mailString + "INSERT INTO `Opponents` VALUES ("
+                        this.tbConvertedData.Text = this.tbConvertedData.Text + "INSERT INTO `Opponents` VALUES ("
                             + adjustAutoIndex(opponent.OpponentId) + ","
                             + "'" + opponent.Name + "'"
                             + ");\n";
@@ -245,29 +244,33 @@ namespace MagicGameTracker.View
                     #endregion
 
                     //End Script
-                    mailString = mailString + "COMMIT;";
+                    this.tbConvertedData.Text = this.tbConvertedData.Text + "COMMIT;";
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occured trying to convert data into a valid format. Error msg: " + ex.Message);
-                }                
+                }
                 #endregion
             }
+        }
 
+        private void bExportData_Click(object sender, RoutedEventArgs e)
+        {
             //Send email
+            //Här i går någonting snett
             try
             {
                 EmailComposeTask emailComposeTask = new EmailComposeTask();
 
-                emailComposeTask.Subject = "Magic game tracker " + csvOrSql + " data";
-                emailComposeTask.Body = mailString;
-                emailComposeTask.To = this.tbEmail.Text;
+                emailComposeTask.Subject = "Magic game tracker data";
+                emailComposeTask.Body = this.tbConvertedData.Text; //Är det problem med stringen? If==null?
+                emailComposeTask.To = this.tbEmail.Text; //Reagerar inte på felaktigt utfromad mail
 
                 emailComposeTask.Show();
             }
             catch (Exception)
             {
-                MessageBox.Show("An error occured trying to send the email.");
+                MessageBox.Show("An error occured trying to send the email."); //Lägg till lite info om vad..
             }
         }
 
@@ -367,5 +370,7 @@ namespace MagicGameTracker.View
                 throw new System.Exception("An error occured trying to adjust the AutoIndex");
             }
         }
+
+        
     }
 }
