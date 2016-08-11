@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\MagicGameTracker_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2016-08-10 18:24:43">
-  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\resources.pri" archivePath="resources.pri" lastWriteTime="2016-08-10 18:24:36" />
-  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MagicDeckManagerMVVM.dll" archivePath="MagicDeckManagerMVVM.dll" lastWriteTime="2016-08-10 18:24:36" />
+﻿<xapCache source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\MagicGameTracker_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2016-08-11 21:46:52">
+  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\resources.pri" archivePath="resources.pri" lastWriteTime="2016-08-11 21:46:46" />
+  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MagicDeckManagerMVVM.dll" archivePath="MagicDeckManagerMVVM.dll" lastWriteTime="2016-08-11 21:46:45" />
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="2016-08-09 18:10:46" />
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="2016-08-09 18:10:46" />
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="2016-08-09 18:10:46" />
@@ -33,6 +33,6 @@
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2016-08-10 18:24:42" />
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Background.png" archivePath="Background.png" lastWriteTime="2016-08-09 18:10:46" />
   <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="2016-08-09 18:10:46" />
-  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2016-08-10 18:24:42" />
-  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2016-08-10 18:24:37" />
+  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\obj\Release\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2016-08-11 21:46:51" />
+  <file source="C:\Users\Otto\Documents\GitHub\MagicGameTracker_WindowsPhone\MagicDeckManagerMVVM\Bin\Release\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2016-08-11 21:46:46" />
 </xapCache>
