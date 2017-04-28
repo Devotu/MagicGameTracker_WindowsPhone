@@ -1,0 +1,13 @@
+WaitVerify "{ImageFolder}/14709468758250.png"
+Click "{ImageFolder}/1470947177025.png"
+Wait 1000
+Click "{ImageFolder}/1470947177025.png"
+Click "{ImageFolder}/14709468758701.png"
+Click "{ImageFolder}/14709468760595.png"
+Click "{ImageFolder}/14709468759242.png"
+WaitVerify "{ImageFolder}/14709468759783.png"
+Click "{ImageFolder}/14709468759783.png"
+WaitMouseMove "{ImageFolder}/14709468760234.png" 57 80
+Click "{ImageFolder}/14709468760234.png" 57 80
+Click "{ImageFolder}/14709468760595.png"
+Click "{ImageFolder}/14709468761006.png" 55 60

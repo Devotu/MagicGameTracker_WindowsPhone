@@ -33,7 +33,7 @@
             <Button Content="Opponents" Height="72" HorizontalAlignment="Center" Margin="0,201,0,0" Name="bGoToOpponents" VerticalAlignment="Top" Width="374" Click="bGoToOpponents_Click" />
             <Button Content="Export/Import" Height="72" HorizontalAlignment="Center" Margin="0,279,0,0" Name="bGoToExport" VerticalAlignment="Top" Width="374" Click="bGoToExport_Click" />
             <TextBlock Name="tbChangesTitle" Height="30" HorizontalAlignment="Center" Margin="30,150,30,0" Width="320" TextAlignment="Center" Text="Recent changes" TextWrapping="Wrap" Foreground="Khaki"/>
-            <TextBlock Name="tbChanges" Height="100" HorizontalAlignment="Center" Margin="30,280,30,0" Width="320" TextAlignment="Center" Text="Data export now available. More information in Help/About." TextWrapping="Wrap" Foreground="DarkKhaki"/>
+            <TextBlock Name="tbChanges" Height="100" HorizontalAlignment="Center" Margin="30,280,30,0" Width="320" TextAlignment="Center" Text="Magic Game Tracker is in development as a web service. More info at Magirator.net" TextWrapping="Wrap" Foreground="DarkKhaki"/>
             <Button Content="Help/About" Height="72" HorizontalAlignment="Center" Margin="0,0,0,45" Name="bAbout" VerticalAlignment="Bottom" Width="374" Click="bAbout_Click" />
         </Grid>
     </Grid>
